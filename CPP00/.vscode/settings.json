@@ -60,6 +60,16 @@
 		"vector": "cpp",
 		"*.tcc": "cpp",
 		"cinttypes": "cpp",
-		"hashtable": "cpp"
+		"hashtable": "cpp",
+		"bit": "cpp",
+		"compare": "cpp",
+		"concepts": "cpp",
+		"deque": "cpp",
+		"memory_resource": "cpp",
+		"numeric": "cpp",
+		"optional": "cpp",
+		"random": "cpp",
+		"fstream": "cpp",
+		"ranges": "cpp"
 	}
 }
