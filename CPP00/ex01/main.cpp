@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 21:02:02 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/13 10:19:17 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/13 11:09:35 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,10 @@ int	main(int ac, char **av)
 		if (input.compare("add") == 0 || input.compare("ADD") == 0)
 		{
 			cellphone.get_contact();
+		}
+		if (input.compare("search") == 0 || input.compare("SEARCH") == 0)
+		{
+			cellphone.search_contact();
 		}
 	}
 	return (0);

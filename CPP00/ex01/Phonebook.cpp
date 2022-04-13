@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 21:40:28 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/13 10:57:15 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/13 11:15:52 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,21 @@ void	PhoneBook::get_contact()
 	}
 }
 
+void	PhoneBook::search_contact()
+{
+	std::cout << "index | first name | last name | nickname | phone number | darkest secret" << std::endl;
+	for (int i = 0; i < 8; i++)
+	{
+		std::cout << i << " | ";
+		std::cout << repertory[i].get_name() << " | ";
+		std::cout << repertory[i].get_last_name() << " | ";
+		std::cout << repertory[i].get_nickname() << " | ";
+		std::cout << repertory[i].get_number() << " | ";
+		std::cout << repertory[i].get_darkest_secret() << std::endl;
+		i++;
+	}
+}
+
 void	PhoneBook::show_contact()
 {
 	int		i;
@@ -68,10 +83,10 @@ void	PhoneBook::show_contact()
 	i = 0;
 	while (i < 8)
 	{
-		std::cout << "Name: " << repertory[i].get_name() << std::endl;
-		std::cout << "Last Name: " << repertory[i].get_name() << std::endl;
-		std::cout << "Number: " << repertory[i].get_number() << std::endl;
-		std::cout << "darkest secret: " << repertory[i].get_darkest_secret() << std::endl;
+		std::cout << i << " - Name: " << repertory[i].get_name() << std::endl;
+		std::cout << i << " - Last Name: " << repertory[i].get_name() << std::endl;
+		std::cout << i << " - Number: " << repertory[i].get_number() << std::endl;
+		std::cout << i << " - darkest secret: " << repertory[i].get_darkest_secret() << std::endl;
 		i++;
 	}
 }

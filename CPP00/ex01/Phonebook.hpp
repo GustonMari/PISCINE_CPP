@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 20:28:40 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/13 10:18:00 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/13 11:09:19 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class PhoneBook
 		PhoneBook();
 		~PhoneBook();
 		void	get_contact();
+		void	search_contact();
 		//void	create_contact();
 		void	show_contact();
 };
