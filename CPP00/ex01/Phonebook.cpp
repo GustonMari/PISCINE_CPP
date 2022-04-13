@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 21:40:28 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/13 12:24:59 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/13 14:02:30 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,15 @@ std::string make_ten_wider(std::string str)
 	if (str.size() >= 8)
 	{
 		str_tmp.append(str);
-		str_tmp.replace(8, 2, ".\0");
+		str_tmp.replace(8, 1, ".");
+		// le truc en dessous marche pas mais il faut tester
+		if (i < 10 - str_tmp.size() )
+		{
+			str_tmp.insert(1, " ");
+			i++;
+		}
 	}
+	i = 0;
 	if (str.size() < 10)
 	{
 		while (i < 10 - str.size())
