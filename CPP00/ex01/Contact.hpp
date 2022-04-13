@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 20:53:20 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/12 16:31:41 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/13 10:22:58 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 class Contact
 {
 	private:
-		std::string	name = "Gustave";
-		std::string	last_name = "Mary";
-		std::string	number = "06-------";
-		std::string	age = "26";
+		std::string	name = "";
+		std::string	last_name = "";
+		std::string	number = "";
+		std::string	age = "";
 	public:
 		Contact();
 		~Contact();
@@ -30,6 +30,10 @@ class Contact
 		std::string	get_last_name();
 		std::string	get_number();
 		std::string	get_age();
+		void		set_name(std::string);
+		void		set_last_name(std::string);
+		void		set_number(std::string);
+		void		set_age(std::string);
 };
 
 #endif
