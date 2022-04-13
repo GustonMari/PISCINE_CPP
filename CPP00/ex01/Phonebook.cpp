@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 21:40:28 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/13 10:25:00 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/13 10:57:15 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,36 @@ void	PhoneBook::get_contact()
 	i = 0;
 	while(i < 8)
 	{
-		std::cout << "Enter the name of the contact: ";
-		std::getline(std::cin, str);
-		repertory[i].set_name(str);
-		std::cout << "Enter the last name of the contact: ";
-		std::getline(std::cin, str);
-		repertory[i].set_last_name(str);
-		std::cout << "Enter the number of the contact: ";
-		std::getline(std::cin, str);
-		repertory[i].set_number(str);
-		std::cout << "Enter the age of the contact: ";
-		std::getline(std::cin, str);
-		repertory[i].set_age(str);
+		do
+		{
+			std::cout << i << " - first name: ";
+			std::getline(std::cin, str);
+			repertory[i].set_name(str);
+		} while (str.empty());
+		do
+		{
+			std::cout << i << " - last name: ";
+			std::getline(std::cin, str);
+			repertory[i].set_last_name(str);
+		} while (str.empty());
+		do
+		{
+			std::cout << i << " - nickname: ";
+			std::getline(std::cin, str);
+			repertory[i].set_nickname(str);
+		} while (str.empty());
+		do
+		{
+			std::cout << i << " - phone number: ";
+			std::getline(std::cin, str);
+			repertory[i].set_number(str);
+		} while (str.empty());
+		do
+		{
+			std::cout << i << " - darkest secret: ";
+			std::getline(std::cin, str);
+			repertory[i].set_darkest_secret(str);
+		} while (str.empty());
 		i++;
 	}
 }
@@ -53,18 +71,10 @@ void	PhoneBook::show_contact()
 		std::cout << "Name: " << repertory[i].get_name() << std::endl;
 		std::cout << "Last Name: " << repertory[i].get_name() << std::endl;
 		std::cout << "Number: " << repertory[i].get_number() << std::endl;
-		std::cout << "Age: " << repertory[i].get_age() << std::endl;
+		std::cout << "darkest secret: " << repertory[i].get_darkest_secret() << std::endl;
 		i++;
 	}
 }
-
-/* void	show_contact(void)
-{
-	std::cout << "Name: " << get_name() << std::endl;
-	std::cout << "Last Name: " << get_name() << std::endl;
-	std::cout << "Number: " << get_number() << std::endl;
-	std::cout << "Age: " << get_age() << std::endl;
-} */
 
 PhoneBook::PhoneBook(void)
 {

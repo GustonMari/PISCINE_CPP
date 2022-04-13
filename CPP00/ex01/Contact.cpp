@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 14:39:24 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/13 10:27:19 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/13 10:39:39 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ std::string	Contact::get_name(void)
 	return (name);
 }
 
+std::string	Contact::get_nickname(void)
+{
+	return (nickname);
+}
+
 std::string	Contact::get_last_name(void)
 {
 	return (last_name);
@@ -39,14 +44,19 @@ std::string	Contact::get_number(void)
 	return (number);
 }
 
-std::string	Contact::get_age(void)
+std::string	Contact::get_darkest_secret(void)
 {
-	return (age);
+	return (darkest_secret);
 }
 
 void Contact::set_name(std::string name_)
 {
 	name.assign(name_);
+}
+
+void Contact::set_nickname(std::string nickname_)
+{
+	nickname.assign(nickname_);
 }
 
 void Contact::set_last_name(std::string last_name_)
@@ -59,9 +69,9 @@ void Contact::set_number(std::string number_)
 	number.assign(number_);
 }
 
-void Contact::set_age(std::string age_)
+void Contact::set_darkest_secret(std::string darkest_secret_)
 {
-	age.assign(age_);
+	darkest_secret.assign(darkest_secret_);
 }
 
 Contact::Contact(void)
