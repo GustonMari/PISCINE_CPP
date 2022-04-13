@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 21:40:28 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/13 11:15:52 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/13 12:24:59 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,116 @@
 
 /*
 	str.empty()
-	
+	str.size()
+	append concat a la fin de la string actuelle
+	str.append(str2);                       // "Writing "
+	str.append(str3,6,3);                   // "10 "
+	str.append("dots are cool",5);          // "dots "
+	str.append("here: ");                   // "here: "
+	 std::string str=base;           // "this is a test string."
+ 	str.replace(9,5,str2);          // "this is an example string." (1)
+ 	str.replace(19,6,str3,7,6);     // "this is an example phrase." (2)
+ 	str.replace(8,10,"just a");     // "this is just a phrase."     (3)
+ 	str.replace(8,6,"a shorty",7);  // "this is a short phrase."    (4)
+ 	str.replace(22,1,3,'!');        // "this is a short phrase!!!"  (5)
 */
 
+std::string make_ten_wider(std::string str)
+{
+	long unsigned int	i;
+	std::string		str_tmp;
+
+	i = 0;
+	//while (i < 8)
+	//{
+	//	str_tmp[i] = str[i];
+	//	if (str.size() >= 8)
+	//	{
+	//		str[8] = '.';
+	//		str[9] = '\0';
+	//	}
+	//	i++;
+	//}
+	i = 0;
+	if (str.size() >= 8)
+	{
+		str_tmp.append(str);
+		str_tmp.replace(8, 2, ".\0");
+	}
+	if (str.size() < 10)
+	{
+		while (i < 10 - str.size())
+		{
+			str_tmp.append(" ");
+			i++;
+		}
+		if (str.size() < 8)
+			str_tmp.append(str);
+	}
+
+	return (str_tmp);
+}
+
+/* std::string make_ten_wider(std::string str)
+{
+
+			if (str.size() < 8)
+		{
+			str_tmp.append(str);
+			str_tmp.append(".");
+		}
+	long unsigned int	i;
+	std::string		str_tmp;
+
+	i = 0;
+	//while (i < 8)
+	//{
+	//	str_tmp[i] = str[i];
+	//	if (str.size() >= 8)
+	//	{
+	//		str[8] = '.';
+	//		str[9] = '\0';
+	//	}
+	//	i++;
+	//}
+	i = 0;
+	if (str.size() < 10)
+	{
+		while (i < 10 - str.size())
+		{
+			str_tmp.append(" ");
+			i++;
+		}
+		str_tmp.append(str);
+	}
+	if (str.size() >= 8)
+	{
+		str_tmp.replace(8, 2, ".\0");
+	}
+	return (str_tmp);
+} */
+
+void	PhoneBook::search_contact()
+{
+	std::cout << "index     | firstname| last name|  nickname|    number|darksecret|" << std::endl;
+	for (int i = 0; i < SIZE_PHONEBOOK; i++)
+	{
+		std::cout << i << "         |";
+		std::cout << make_ten_wider(repertory[i].get_name()) << "|";
+		std::cout << make_ten_wider(repertory[i].get_last_name()) << "|";
+		std::cout << make_ten_wider(repertory[i].get_nickname()) << "|";
+		std::cout << make_ten_wider(repertory[i].get_number()) << "|";
+		std::cout << make_ten_wider(repertory[i].get_darkest_secret()) << "|" << std::endl;
+		//i++;
+	}
+}
 
 void	PhoneBook::get_contact()
 {
 	int	i;
 	std::string	str;
 	i = 0;
-	while(i < 8)
+	while(i < SIZE_PHONEBOOK)
 	{
 		do
 		{
@@ -61,35 +161,6 @@ void	PhoneBook::get_contact()
 	}
 }
 
-void	PhoneBook::search_contact()
-{
-	std::cout << "index | first name | last name | nickname | phone number | darkest secret" << std::endl;
-	for (int i = 0; i < 8; i++)
-	{
-		std::cout << i << " | ";
-		std::cout << repertory[i].get_name() << " | ";
-		std::cout << repertory[i].get_last_name() << " | ";
-		std::cout << repertory[i].get_nickname() << " | ";
-		std::cout << repertory[i].get_number() << " | ";
-		std::cout << repertory[i].get_darkest_secret() << std::endl;
-		i++;
-	}
-}
-
-void	PhoneBook::show_contact()
-{
-	int		i;
-
-	i = 0;
-	while (i < 8)
-	{
-		std::cout << i << " - Name: " << repertory[i].get_name() << std::endl;
-		std::cout << i << " - Last Name: " << repertory[i].get_name() << std::endl;
-		std::cout << i << " - Number: " << repertory[i].get_number() << std::endl;
-		std::cout << i << " - darkest secret: " << repertory[i].get_darkest_secret() << std::endl;
-		i++;
-	}
-}
 
 PhoneBook::PhoneBook(void)
 {
