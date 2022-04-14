@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 21:40:28 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/13 14:02:30 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/14 11:23:20 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,148 +30,100 @@
  	str.replace(22,1,3,'!');        // "this is a short phrase!!!"  (5)
 */
 
-std::string make_ten_wider(std::string str)
+void	make_ten_wider(std::string str)
 {
 	long unsigned int	i;
-	std::string		str_tmp;
 
 	i = 0;
-	//while (i < 8)
-	//{
-	//	str_tmp[i] = str[i];
-	//	if (str.size() >= 8)
-	//	{
-	//		str[8] = '.';
-	//		str[9] = '\0';
-	//	}
-	//	i++;
-	//}
-	i = 0;
-	if (str.size() >= 8)
+	if (str.length() < 10)
 	{
-		str_tmp.append(str);
-		str_tmp.replace(8, 1, ".");
-		// le truc en dessous marche pas mais il faut tester
-		if (i < 10 - str_tmp.size() )
+		while (i < 10 - str.length())
 		{
-			str_tmp.insert(1, " ");
+			std::cout << " ";
 			i++;
 		}
+		std::cout << str << "|";
 	}
-	i = 0;
-	if (str.size() < 10)
+	else if (str.length() > 10)
 	{
-		while (i < 10 - str.size())
+		while (i < 9)
 		{
-			str_tmp.append(" ");
+			std::cout << str[i];
 			i++;
 		}
-		if (str.size() < 8)
-			str_tmp.append(str);
+		std::cout << ".|";
 	}
-
-	return (str_tmp);
+	else
+		std::cout << str << "|";
 }
 
-/* std::string make_ten_wider(std::string str)
-{
-
-			if (str.size() < 8)
-		{
-			str_tmp.append(str);
-			str_tmp.append(".");
-		}
-	long unsigned int	i;
-	std::string		str_tmp;
-
-	i = 0;
-	//while (i < 8)
-	//{
-	//	str_tmp[i] = str[i];
-	//	if (str.size() >= 8)
-	//	{
-	//		str[8] = '.';
-	//		str[9] = '\0';
-	//	}
-	//	i++;
-	//}
-	i = 0;
-	if (str.size() < 10)
-	{
-		while (i < 10 - str.size())
-		{
-			str_tmp.append(" ");
-			i++;
-		}
-		str_tmp.append(str);
-	}
-	if (str.size() >= 8)
-	{
-		str_tmp.replace(8, 2, ".\0");
-	}
-	return (str_tmp);
-} */
 
 void	PhoneBook::search_contact()
 {
-	std::cout << "index     | firstname| last name|  nickname|    number|darksecret|" << std::endl;
-	for (int i = 0; i < SIZE_PHONEBOOK; i++)
+	if (nb_contact == 0)
 	{
-		std::cout << i << "         |";
-		std::cout << make_ten_wider(repertory[i].get_name()) << "|";
-		std::cout << make_ten_wider(repertory[i].get_last_name()) << "|";
-		std::cout << make_ten_wider(repertory[i].get_nickname()) << "|";
-		std::cout << make_ten_wider(repertory[i].get_number()) << "|";
-		std::cout << make_ten_wider(repertory[i].get_darkest_secret()) << "|" << std::endl;
-		//i++;
+		std::cout << "No contact present" << std::endl;
+		return ;
+	}
+	std::cout << "index     | firstname| last name|  nickname|    number|" << std::endl;
+	for (int i = 0; i < nb_contact; i++)
+	{
+		std::cout << "         " << i << "|";
+		make_ten_wider(repertory[i].get_name());
+		make_ten_wider(repertory[i].get_last_name());
+		make_ten_wider(repertory[i].get_nickname());
+		make_ten_wider(repertory[i].get_number());
+		std::cout << std::endl;
 	}
 }
 
 void	PhoneBook::get_contact()
 {
-	int	i;
 	std::string	str;
-	i = 0;
-	while(i < SIZE_PHONEBOOK)
+
+	if (index == 8)
+		index = 0;
+	do
 	{
-		do
-		{
-			std::cout << i << " - first name: ";
-			std::getline(std::cin, str);
-			repertory[i].set_name(str);
-		} while (str.empty());
-		do
-		{
-			std::cout << i << " - last name: ";
-			std::getline(std::cin, str);
-			repertory[i].set_last_name(str);
-		} while (str.empty());
-		do
-		{
-			std::cout << i << " - nickname: ";
-			std::getline(std::cin, str);
-			repertory[i].set_nickname(str);
-		} while (str.empty());
-		do
-		{
-			std::cout << i << " - phone number: ";
-			std::getline(std::cin, str);
-			repertory[i].set_number(str);
-		} while (str.empty());
-		do
-		{
-			std::cout << i << " - darkest secret: ";
-			std::getline(std::cin, str);
-			repertory[i].set_darkest_secret(str);
-		} while (str.empty());
-		i++;
-	}
+		std::cout << index << " - first name: ";
+		std::getline(std::cin, str);
+		repertory[index].set_name(str);
+	} while (str.empty());
+	do
+	{
+		std::cout << index << " - last name: ";
+		std::getline(std::cin, str);
+		repertory[index].set_last_name(str);
+	} while (str.empty());
+	do
+	{
+		std::cout << index << " - nickname: ";
+		std::getline(std::cin, str);
+		repertory[index].set_nickname(str);
+	} while (str.empty());
+	do
+	{
+		std::cout << index << " - phone number: ";
+		std::getline(std::cin, str);
+		repertory[index].set_number(str);
+	} while (str.empty());
+	do
+	{
+		std::cout << index << " - darkest secret: ";
+		std::getline(std::cin, str);
+		repertory[index].set_darkest_secret(str);
+	} while (str.empty());
+	if (nb_contact < 8)
+		nb_contact++;
+	index++;
 }
 
 
 PhoneBook::PhoneBook(void)
 {
 	std::cout << "Create PhoneBook" << std::endl;
+	nb_contact = 0;
+	index = 0;
 }
 
 PhoneBook::~PhoneBook()

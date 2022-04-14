@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 20:28:40 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/13 11:51:07 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/14 11:22:34 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,16 @@
 // #include <array>
 // #include "colors.h"
 # include "Contact.hpp"
-# define SIZE_PHONEBOOK 1
+# define SIZE_PHONEBOOK 8
 
 class PhoneBook
 {
 	private:
 			//std::array<Contact, 8>	contacts;
 			//besoin den cree 8 tel que 	Contact repertory[8];
-		Contact repertory[SIZE_PHONEBOOK];
+		int		nb_contact;
+		int		index;
+		Contact	repertory[SIZE_PHONEBOOK];
 
 	public:
 		PhoneBook();
