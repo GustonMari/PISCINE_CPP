@@ -6,13 +6,12 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 21:02:02 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/14 10:27:22 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/14 11:48:48 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-#include <array>
 #include "colors.h"
 //#include "Contact.hpp"
 #include "Phonebook.hpp"

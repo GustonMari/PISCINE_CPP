@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 20:53:20 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/13 10:37:47 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/14 11:48:22 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 class Contact
 {
 	private:
-		std::string	name = "";
-		std::string	nickname = "";
-		std::string	last_name = "";
-		std::string	number = "";
-		std::string	darkest_secret = "";
+		std::string	name;
+		std::string	nickname;
+		std::string	last_name;
+		std::string	number;
+		std::string	darkest_secret;
 	public:
 		Contact();
 		~Contact();
