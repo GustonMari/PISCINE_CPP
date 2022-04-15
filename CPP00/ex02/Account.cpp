@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 13:19:48 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/14 17:19:52 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/15 09:37:52 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 	FUNCTION_OBJECT std::for_each( IT begin, IT end, FUNCTION_OBJECT fo );
 
 	this->_amount = initial_deposit;
-	peut tres bien sscrire comme ceci ???:
+	peut tres bien sscrire comme ceci:
 	Account::_amount = initial_deposit;
 
 	When we declare a member of a class as static
@@ -52,19 +52,20 @@ void	Account::_displayTimestamp(void)
 
 void	Account::displayAccountsInfos(void)
 {
-	std::cout << "Number of account:" << _nbAccounts << std::endl;
-	std::cout << "Total amount:" << _totalAmount << std::endl;
-	std::cout << "Number of deposit:" << _totalNbDeposits << std::endl;
-	std::cout << "Number of total withdrawals:" << _totalNbWithdrawals << std::endl;
+	_displayTimestamp();
+	std::cout << " accounts:" << _nbAccounts;
+	std::cout << ";total:" << _totalAmount;
+	std::cout << ";deposits:" << _totalNbDeposits;
+	std::cout << ";withdrawals:" << _totalNbWithdrawals << std::endl;
 }
 
 void	Account::displayStatus(void) const
 {
 	_displayTimestamp();
-	std::cout << "index:" << _accountIndex << std::endl;
-	std::cout << "amount:" << _amount << std::endl;
-	std::cout << "number of deposits:" << _nbDeposits << std::endl;
-	std::cout << "number of withdrawals:" << _nbWithdrawals << std::endl;
+	std::cout << " index:" << _accountIndex;
+	std::cout << ";amount:" << _amount;
+	std::cout << ";deposits:" << _nbDeposits;
+	std::cout << ";withdrawals:" << _nbWithdrawals << std::endl;
 }
 
 void	Account::makeDeposit(int deposit)
@@ -74,7 +75,7 @@ void	Account::makeDeposit(int deposit)
 	_amount += deposit;
 	_totalAmount += deposit;
 	_displayTimestamp();
-	std::cout << "index:" << _accountIndex << ";p_amount:" << _amount << ";deposit:" << deposit << std::endl;
+	std::cout << " index:" << _accountIndex << ";p_amount:" << _amount << ";deposit:" << deposit << std::endl;
 }
 
 bool	Account::makeWithdrawal(int withdrawal)
@@ -84,7 +85,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 	_totalNbWithdrawals++;
 	_totalAmount -= withdrawal;
 	_displayTimestamp();
-	std::cout << "index:" << _accountIndex << ";p_amount:" << _amount << ";withdrawal:" << withdrawal << std::endl;
+	std::cout << " index:" << _accountIndex << ";p_amount:" << _amount << ";withdrawal:" << withdrawal << std::endl;
 	//QUE DOIS TON RETURN ????
 	return (1);
 }
@@ -138,7 +139,7 @@ Account::Account(int initial_deposit)
 	_nbDeposits = 0;
 	_totalAmount += initial_deposit;
 	_displayTimestamp();
-	std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";created" << std::endl;
+	std::cout << " index:" << _accountIndex << ";amount:" << _amount << ";created" << std::endl;
 }
 
 Account::~Account(void)
@@ -148,5 +149,5 @@ Account::~Account(void)
 	_totalNbWithdrawals -= _nbWithdrawals;
 	_totalNbDeposits -= _nbDeposits;
 	_displayTimestamp();
-	std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";closed" << std::endl;
+	std::cout << " index:" << _accountIndex << ";amount:" << _amount << ";closed" << std::endl;
 }
