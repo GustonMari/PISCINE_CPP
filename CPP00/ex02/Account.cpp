@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 13:19:48 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/15 09:37:52 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/15 10:38:15 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,12 @@
 		int		checkAmount( void ) const;
 		const veut dire quelon ne modifie pas la valeur dune variable de la class dans cette focntion
 		
-	lorsquil y a une static dans une lasse il faut la definir dans le fichier .cpp comme si dessous:
+	lorsquil y a une static dans une classe il faut la definir dans le fichier .cpp comme si dessous:
 		int	Account::_nbAccounts = 0;
 		int Account::_totalAmount = 0;
 		int Account::_totalNbDeposits = 0;
 		int Account::_totalNbWithdrawals = 0;
+	en c++ on peut ecrire true ou false sans MAJ pour les booleens
 */
 
 int	Account::_nbAccounts = 0;
@@ -72,22 +73,29 @@ void	Account::makeDeposit(int deposit)
 {
 	_nbDeposits++;
 	_totalNbDeposits++;
-	_amount += deposit;
 	_totalAmount += deposit;
 	_displayTimestamp();
-	std::cout << " index:" << _accountIndex << ";p_amount:" << _amount << ";deposit:" << deposit << std::endl;
+	std::cout << " index:" << _accountIndex << ";p_amount:" << _amount;
+	_amount += deposit;
+	std::cout << ";deposit:" << deposit << ";amount:" << _amount << ";nb_deposits:" << _nbDeposits << std::endl;
 }
 
 bool	Account::makeWithdrawal(int withdrawal)
 {
+	if (_amount < withdrawal)
+	{
+		_displayTimestamp();
+		std::cout << " index:" << _accountIndex << ";p_amount:" << _amount << ";withdrawal:" << "refused" << std::endl;
+		return (false);
+	}
 	_nbWithdrawals++;
-	_amount -= withdrawal;
 	_totalNbWithdrawals++;
 	_totalAmount -= withdrawal;
 	_displayTimestamp();
-	std::cout << " index:" << _accountIndex << ";p_amount:" << _amount << ";withdrawal:" << withdrawal << std::endl;
-	//QUE DOIS TON RETURN ????
-	return (1);
+	std::cout << " index:" << _accountIndex << ";p_amount:" << _amount << ";withdrawal:" << withdrawal;
+	_amount -= withdrawal;
+	std::cout << ";amount:" << _amount << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
+	return (true);
 }
 
 // A CHECKER PAS SUR SI CEST OK
@@ -133,7 +141,7 @@ int	Account::getNbWithdrawals(void)
 Account::Account(int initial_deposit)
 {
 	_nbAccounts++;
-	_accountIndex = Account::_nbAccounts;
+	_accountIndex = _nbAccounts - 1;
 	_amount = initial_deposit;
 	_nbWithdrawals = 0;
 	_nbDeposits = 0;
