@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 13:19:48 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/15 10:38:15 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/15 11:59:47 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,14 @@
 		int Account::_totalNbDeposits = 0;
 		int Account::_totalNbWithdrawals = 0;
 	en c++ on peut ecrire true ou false sans MAJ pour les booleens
+
+	A static function is a member function of a class 
+	that can be called even when an object of the class is not initialized. 
+	A static function cannot access any variable of its class except for static variables.
+	a regular function can access static variables but a static function cannot access regular variables
+	Can't call any other class functions that are not static.
+	Can't access non static class data members.
+	Can instantiate an object via new class() when constructor is private/protected. E.g. a factory function
 */
 
 int	Account::_nbAccounts = 0;
