@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 10:49:33 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/15 16:48:29 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/15 17:15:17 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int	main(void)
 	new_Zombie = Zombie::newZombie(str);
 	new_Zombie->announce();
 	delete new_Zombie;
+	Zombie::randomChump("Marco");
 	return (0);
 }

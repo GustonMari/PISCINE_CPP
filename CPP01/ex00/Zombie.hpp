@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 10:49:57 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/15 16:45:40 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/15 17:10:37 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ class Zombie
 		Zombie();
 		~Zombie();
 		void	announce(void);
-		static Zombie* newZombie(std::string name);
+		static Zombie*	newZombie(std::string name);
+		static void		randomChump(std::string name);
 	private:
 		std::string	_name;
 };
