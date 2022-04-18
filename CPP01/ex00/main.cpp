@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 10:49:33 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/15 17:15:17 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/18 10:39:05 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,22 @@
 /* 
 Only static functions are called with class name:
 classname::Staicfunction();
-->cest pq ici je mets en static newZobiedans ma classe
+->cest pq ici je mets en static newZobie dans ma classe
 
 
 Non static functions have to be called using objects:
 classname obj;
 obj.Somefunction();
+
+
+Super interessant on peut definir plusieurs constructeurs
+dans un mm fichier la salection de celui qui sera appelé
+depend de la valeur de l'argument passé au constructeur
+on peut ainsi avoir ceci:
+Zombie::Zombie(void);
+Zombie::Zombie(std::string name); => super utile par exemple pour avoir acce a mes valeur prive 
+via linitialisation list
+Zombie::Zombie(std::string name): _name(name);
 
 */
 
