@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 16:59:18 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/20 11:23:59 by gmary            ###   ########.fr       */
+/*   Created: 2022/04/19 16:59:21 by gmary             #+#    #+#             */
+/*   Updated: 2022/04/20 11:37:30 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
+#include <iostream>
+#include "Harl.hpp"
 
-class Harl
+//lennonce est vraiment pas claire avec ce quil faut faire pour un main
+
+int	main(int ac, char **av)
 {
-	public:
-		void complain(std::string level);
-		Harl();
-		~Harl();
-	private:
-		void	debug(void);
-		void	info(void);
-		void	warning(void);
-		void	error(void);
-};
+	Harl	h;
+	if (ac == 2)
+		h.complain(av[1]);
+	else
+		std::cout << "Add an argument" << std::endl;
+	return (0);
+}

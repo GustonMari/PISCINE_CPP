@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:59:24 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/20 11:39:35 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/20 11:39:14 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 Harl::Harl(void)
 {
-	std::cout << "Harl constructor" << std::endl;
+	//std::cout << "Harl constructor" << std::endl;
 }
 
 Harl::~Harl(void)
 {
-	std::cout << "Harl destructor" << std::endl;
+	//std::cout << "Harl destructor" << std::endl;
 }
 
 void	Harl::complain(std::string level)
@@ -33,12 +33,18 @@ void	Harl::complain(std::string level)
 	{
 		if (level.compare(str[i]) == 0)
 		{
-			(this->*f[i])();
+			while (i < 4)
+			{
+				std::cout << "[ " << str[i] << " ]" << std::endl;
+				(this->*f[i])();
+				std::cout << std::endl;
+				i++;
+			}
 			return ;
 		}
 		i++;
 	} while (i < 4);
-	std::cout << level << " is not a valid level" << std::endl;
+	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }
 
 /* void	Harl::complain(std::string level)
