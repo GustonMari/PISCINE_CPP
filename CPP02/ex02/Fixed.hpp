@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:14:23 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/22 15:51:02 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/22 16:46:09 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class Fixed
 		bool	operator>=(const Fixed & rhs) const;
 		bool	operator<=(const Fixed & rhs) const;
 		static	Fixed & min(Fixed & src1, Fixed & src2);
-		static	const Fixed & min(const Fixed & src1, const Fixed & src2);
+		static	Fixed const & min(Fixed const & src1, Fixed const & src2);
 		static	Fixed & max(Fixed & src1, Fixed & src2);
 		static	const Fixed & max(const Fixed & src1, const Fixed & src2);
 		float	toFloat(void) const;

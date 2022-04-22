@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:13:44 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/22 14:49:33 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/22 17:16:30 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@
 	friend Point operator--( Point&, int );  // Postfix decrement
 	mutable int var; //veut dire que mm dans une const fonction on peut la modifier
 	attention les operateurs ++ et -- ne sont pas const car ils agissent sur lobjet actuelle
+
+	ATTENTION on doit passer par toFloat pour add, multi, div car on veut le resultat en float alors que si on veut juste ++ on aurra juste a ajoute un donc le la
+	partie decimal serra toujours intact
 */
 
 int main( void )

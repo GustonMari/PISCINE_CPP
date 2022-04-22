@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:14:57 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/22 15:53:50 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/22 17:13:36 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,34 +78,22 @@ bool	Fixed::operator<=(const Fixed & rhs) const
 
 Fixed	Fixed::operator+(const Fixed & rhs) const
 {
-	Fixed	result;
-
-	result.raw_bits = this->raw_bits + rhs.raw_bits;
-	return (result);
+	return (Fixed(this->toFloat() + rhs.toFloat()));
 }
 
 Fixed	Fixed::operator-(const Fixed & rhs) const
 {
-	Fixed	result;
-
-	result.raw_bits = this->raw_bits - rhs.raw_bits;
-	return (result);
+	return (Fixed(this->toFloat() - rhs.toFloat()));
 }
 
 Fixed	Fixed::operator*(const Fixed & rhs) const
 {
-	Fixed	result;
-	
-	result.raw_bits = (this->raw_bits * rhs.raw_bits);
-	return (result);
+	return (Fixed(this->toFloat() * rhs.toFloat()));
 }
 
 Fixed	Fixed::operator/(const Fixed & rhs) const
 {
-	Fixed	result;
-
-	result.raw_bits = (this->raw_bits / rhs.raw_bits);
-	return (result);
+	return (Fixed(this->toFloat() / rhs.toFloat()));
 }
 
 Fixed	Fixed::operator==(const Fixed & rhs) const
@@ -162,15 +150,8 @@ Fixed	& Fixed::min(Fixed & src1, Fixed & src2)
 		return (src2);
 }
 
-const Fixed & Fixed::min(const Fixed & src1, const Fixed & src2)
-{
-	if (src1.raw_bits < src2.raw_bits)
-		return (src1);
-	else
-		return (src2);
-}
 
-Fixed	& Fixed::max(Fixed & src1, Fixed & src2)
+Fixed const	& Fixed::max(Fixed const & src1, Fixed const & src2)
 {
 	if (src1.raw_bits > src2.raw_bits)
 		return (src1);
@@ -185,6 +166,7 @@ const Fixed & Fixed::min(const Fixed & src1, const Fixed & src2)
 	else
 		return (src2);
 }
+
 int	Fixed::getRawBits(void) const
 {
 	//std::cout << "getRawBits member function called" << std::endl;
