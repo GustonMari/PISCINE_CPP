@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:13:44 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/21 11:31:14 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/22 10:57:01 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 /*
 	fixed point arithmetic is much faster than floating point arithmetic.
 	int equivaut a 8 bits
-
+	https://docs.microsoft.com/fr-fr/cpp/standard-library/overloading-the-output-operator-for-your-own-classes?view=msvc-170
+	https://askcodez.com/la-surcharge-de-c-operateur-dinsertion.html
 */
 
 int main( void )

@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:14:57 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/21 13:12:38 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/22 11:10:34 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,26 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
+/*
+	OPERATOR OVERLOADING
+*/
+
 Fixed	&Fixed::operator=(const Fixed &rhs)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-		this->raw_bits = rhs.getRawBits();
+		this->raw_bits = rhs.raw_bits;
 	return (*this);
 }
+
+std::ostream & operator<<(std::ostream &os, const Fixed &rhs)
+{
+	os << rhs.toFloat();
+	return (os);
+}
+
+/*
+	FUNCTION
+*/
 
 int	Fixed::getRawBits(void) const
 {
@@ -52,7 +66,15 @@ int	Fixed::getRawBits(void) const
 	return (this->raw_bits);
 }
 
-float	Fixed::
+float	Fixed::toFloat(void) const
+{
+	return (this->raw_bits / (float)(1 << this->bits));
+}
+
+int Fixed::toInt(void) const
+{
+	return (this->raw_bits >> this->bits);
+}
 
 void	Fixed::setRawBits(int const raw)
 {

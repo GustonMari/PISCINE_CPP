@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:14:23 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/21 13:11:28 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/22 10:57:06 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ class Fixed
 		int	raw_bits;
 		static const int bits = 8;
 };
-
+	std::ostream & operator<<(std::ostream &os, const Fixed &src);
 #endif
