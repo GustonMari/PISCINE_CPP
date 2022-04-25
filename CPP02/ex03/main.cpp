@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:13:44 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/25 17:47:47 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/25 19:10:09 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,15 @@
 	partie decimal serra toujours intact
 	http://totologic.blogspot.com/2014/01/accurate-point-in-triangle-test.html
 */
-
+bool	InRay(Point a, Point b, Point point);
 bool	bsp(Point const a, Point const b, Point const c, Point const point);
 
 int main( void )
 {
 	Point	a(0, 0);
-	Point	b(20, 0);
-	Point	c(0, 20);
-	Point	outside(0, -3);
+	Point	b(0, 2);
+	Point	c(2, 0);
+	Point	outside(0.5, 0.5);
 	Point	inside(3, 3);
 	if (bsp(a, b, c, outside) == false)
 		std::cout << "The point is outside the triangle" << std::endl;

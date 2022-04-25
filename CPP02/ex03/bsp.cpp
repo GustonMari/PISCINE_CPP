@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 09:42:19 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/25 17:48:35 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/25 19:09:44 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,42 @@ Fixed	CalculateArea(Point p1, Point p2, Point p3)
 	return (ft_abs(result) / 2);
 }
 
+/*******
+ * https://www.mathforu.com/seconde/determiner-equation-droite/ 
+*/
+
+bool	InRay(Point a, Point b, Point point)
+{
+	Fixed	m;
+	Fixed	p;
+	if ((a.get_x() == b.get_x() && a.get_x() == point.get_x())
+		|| (a.get_y() == b.get_y() && a.get_y() == point.get_y()))
+		return (true);
+	m = ((b.get_y() - a.get_y()) / (b.get_x() - a.get_x()));
+	p = a.get_y() - (m * a.get_x());
+	if (((m * point.get_x()) - point.get_y() + p) == 0)
+		return (true);
+	return (false);
+}
+
+bool	CheckEdge(Point const a, Point const b, Point const c, Point const point)
+{
+	if (InRay(a, b, point))
+		return (true);
+	if (InRay(a, c, point))
+		return (true);
+	if (InRay(b, c, point))
+		return (true);
+	return (false);
+}
+
 bool bsp(Point const a, Point const b, Point const c, Point const point)
 {
 	Fixed TotalArea;
 	Fixed Area1;
 	Fixed Area2;
 	Fixed Area3;
-	if (point == a || point == b || point == c || CheckEdge(a, b, c, point))
+	if (point == a || point == b || point == c || (CheckEdge(a, b, c, point) == true))
 		return (false);
 	TotalArea = CalculateArea(a, b, c);
 	Area1 = CalculateArea(point, b, c);
