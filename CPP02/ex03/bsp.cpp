@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 09:42:19 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/25 17:22:39 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/25 17:48:35 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ bool bsp(Point const a, Point const b, Point const c, Point const point)
 	Fixed Area1;
 	Fixed Area2;
 	Fixed Area3;
-	if (point == a || point == b || point == c)
+	if (point == a || point == b || point == c || CheckEdge(a, b, c, point))
 		return (false);
 	TotalArea = CalculateArea(a, b, c);
 	Area1 = CalculateArea(point, b, c);
-	Area2 = CalculateArea(a, point, c);
-	Area3 = CalculateArea(a, b, point);
+	Area2 = CalculateArea(point, a, c);
+	Area3 = CalculateArea(point, a, b);
 	if ((Area1 + Area2 + Area3) > TotalArea)
 		return (false);
 	return (true); // si faux, attention si le point est sur sur els cote ou sommet cest faux
