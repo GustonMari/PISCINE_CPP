@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:14:57 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/22 17:13:36 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/25 16:16:00 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ Fixed	Fixed::operator/(const Fixed & rhs) const
 	return (Fixed(this->toFloat() / rhs.toFloat()));
 }
 
-Fixed	Fixed::operator==(const Fixed & rhs) const
+bool	Fixed::operator==(const Fixed & rhs) const
 {
 	return (this->raw_bits == rhs.raw_bits);
 }

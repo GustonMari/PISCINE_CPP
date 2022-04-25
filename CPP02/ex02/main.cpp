@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:13:44 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/25 09:36:16 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/25 16:17:37 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@
 
 int main( void )
 {
-	std::cout << i << std::endl;
 	Fixed a;
 	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 	std::cout << a << std::endl;

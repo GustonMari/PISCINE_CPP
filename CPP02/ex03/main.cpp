@@ -6,13 +6,14 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:13:44 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/25 09:36:16 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/25 17:32:51 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 #include "Fixed.hpp"
+#include "Point.hpp"
 
 /*
 	fixed point arithmetic is much faster than floating point arithmetic.
@@ -28,19 +29,21 @@
 	pour le post incrementation on a en argument int pour signifier au compilo quon est bien en post
 	ATTENTION on doit passer par toFloat pour add, multi, div car on veut le resultat en float alors que si on veut juste ++ on aurra juste a ajoute un donc le la
 	partie decimal serra toujours intact
+	http://totologic.blogspot.com/2014/01/accurate-point-in-triangle-test.html
 */
+
+bool	bsp(Point const a, Point const b, Point const c, Point const point);
 
 int main( void )
 {
-	std::cout << i << std::endl;
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
+	Point	a(0, 0);
+	Point	b(20, 0);
+	Point	c(20, 0);
+	Point	outside(50, 50);
+	Point	inside(3, 3);
+	if (bsp(a, b, c, inside) == false)
+		std::cout << "The point is outside the triangle" << std::endl;
+	else
+		std::cout << "The point is inside the triangle" << std::endl;
 	return 0;
 }

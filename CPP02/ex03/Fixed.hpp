@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:14:23 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/22 16:46:09 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/25 16:13:54 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Fixed
 		Fixed	operator-(const Fixed & rhs) const;
 		Fixed	operator*(const Fixed & rhs) const;
 		Fixed	operator/(const Fixed & rhs) const;
-		Fixed	operator==(const Fixed & rhs) const;
+		bool	operator==(const Fixed & rhs) const;
 		Fixed	operator!=(const Fixed & rhs) const;
 		Fixed	& operator++();
 		Fixed	operator++(int number);
