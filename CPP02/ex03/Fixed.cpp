@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:14:57 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/25 10:00:25 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/22 17:13:36 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Fixed::Fixed(const float n) : raw_bits(roundf(n * (1 << this->bits)))
 Fixed::Fixed(const Fixed & src)
 {
 	//std::cout << "Copy constructor called" << std::endl;
-	*this = src; // src devient l'objet courant on aurait aussi pu init les valeurs de de lobjet avec les valeurs de src
+	*this = src; // src devient l'objet courant
 }
 
 Fixed::~Fixed()
