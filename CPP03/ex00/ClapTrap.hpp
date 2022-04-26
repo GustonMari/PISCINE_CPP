@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:45:42 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/26 14:27:09 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/26 14:53:59 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class ClapTrap
 		std::string	_name;
 		int	hit_point;
 		int	energy_point;
-		int	attack_dommage;
+		int	attack_damage;
 };
 
 #endif

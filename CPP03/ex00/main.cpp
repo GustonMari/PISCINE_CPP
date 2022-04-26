@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:34:45 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/26 13:46:14 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/26 16:05:26 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,9 @@
 
 int main()
 {
-    
+	ClapTrap	claptrap1("Marlo");
+	ClapTrap	claptrap2("Omar");
+	ClapTrap	claptrap3("Stringer Bell");
+	
+	return (0);
 }
