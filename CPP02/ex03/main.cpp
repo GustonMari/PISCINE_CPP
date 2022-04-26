@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:13:44 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/25 19:10:09 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/26 09:44:10 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ bool	bsp(Point const a, Point const b, Point const c, Point const point);
 int main( void )
 {
 	Point	a(0, 0);
-	Point	b(0, 2);
-	Point	c(2, 0);
-	Point	outside(0.5, 0.5);
+	Point	b(0, 20);
+	Point	c(20, 0);
+	Point	outside(0, 10);
 	Point	inside(3, 3);
 	if (bsp(a, b, c, outside) == false)
 		std::cout << "The point is outside the triangle" << std::endl;
