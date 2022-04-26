@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:45:46 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/26 16:07:03 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/26 16:26:47 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name): _name(name), hit_point(10), energy_point(10), attack_damage(0)
 {
-	std::cout << "ClapTrap "<< name <<" was constructed" << std::endl;
+	std::cout << "\e[1;32mClapTrap "<< name <<" was constructed\e[0m" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap & src)
@@ -34,7 +34,7 @@ ClapTrap::ClapTrap(const ClapTrap & src)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap "<< _name <<" has been destroyed" << std::endl;
+	std::cout << "\e[1;31mClapTrap "<< _name <<" has been destroyed\e[0m" << std::endl;
 }
 
 /*
@@ -64,8 +64,8 @@ void	ClapTrap::attack(const std::string& target)
 		return ;
 	}
 	energy_point = energy_point - 1;
-	std::cout << "ClapTrap" << _name << " attacks " << target << ", causing " << attack_damage << " points of damage!" << std::endl;
-	//target.
+	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << attack_damage << " points of damage!" << std::endl;
+	//prochain exo inclure le liens entre attack et takedamage ??
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -76,7 +76,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		return ;
 	}
 	hit_point -= amount;
-	std::cout << "ClapTrap" << _name << "has taken " << amount << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << _name << " has taken " << amount << " points of damage!" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
