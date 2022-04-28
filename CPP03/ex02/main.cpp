@@ -6,12 +6,13 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:34:45 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/27 10:47:33 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/28 07:30:16 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 /*
 	class A  
 	{ 
@@ -56,13 +57,13 @@
 
 int main()
 {
-	ScavTrap	scavtrap1("Gilles");
-	ScavTrap	scavtrap2("arthur");
-	ScavTrap	scavtrap3;
-	scavtrap1.ScavTrap::attack("arthur");
-	scavtrap2.ClapTrap::takeDamage(20);
-	scavtrap3.ScavTrap::attack("Gilles");
-	scavtrap1.ClapTrap::beRepaired(20);
-	scavtrap1.ScavTrap::guardGate();
+	FragTrap	fragtrap1("Gilles");
+	FragTrap	fragtrap2("arthur");
+	FragTrap	fragtrap3;
+	fragtrap1.FragTrap::attack("arthur");
+	fragtrap2.ClapTrap::takeDamage(20);
+	fragtrap3.FragTrap::attack("Gilles");
+	fragtrap1.ClapTrap::beRepaired(20);
+	fragtrap1.FragTrap::highFivesGuys();
 	return (0);
 }

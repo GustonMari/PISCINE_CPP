@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 11:08:58 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/27 11:14:18 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/28 07:26:03 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	FragTrap::attack(const std::string& target)
 	//prochain exo inclure le liens entre attack et takedamage ??
 }
 
-void	FragTrap::guardGate(void)
+void	FragTrap::highFivesGuys(void)
 {
 	if (hit_point <= 0 || energy_point <=0)
 	{
