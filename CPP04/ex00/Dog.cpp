@@ -1,51 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:51:39 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/28 15:00:21 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/28 13:00:13 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Dog.hpp"
 
-Animal::Animal()
+/*
+--------------------CONSTRUCTOR----------------------------------------
+*/
+
+Dog::Dog()
 {
-	std::cout << "Animal " << type << " was constructed" << std::endl;
+	Animal::type = "Dog";
+	std::cout << "Dog was constructed" << std::endl;
 }
 
-Animal::Animal(std::string name)
+Dog::Dog(std::string name)
 {
 	this->type = name;
-	std::cout << "Animal " << type << "was constructed" << std::endl;
+	std::cout << "Dog " << type << "was constructed" << std::endl;
 }
 
-Animal::Animal(const Animal & src)
+Dog::Dog(const Dog & src)
 {
 	*this = src;
-	std::cout << "Animal was copy constructed" << std::endl;
+	std::cout << "Dog was copy constructed" << std::endl;
 }
 
-Animal::~Animal()
+Dog::~Dog()
 {
-	std::cout << "Animal \'" << type << "\' was  destructed" << std::endl;
+	std::cout << "Dog was destructed" << std::endl;
 }
 
-Animal	& Animal::operator=(const Animal &src)
+/*
+--------------------OPERATOR----------------------------------------
+*/
+
+Dog	& Dog::operator=(const Dog &src)
 {
 	this->type = src.type;
 	return (*this);
 }
 
-std::string	Animal::getType(void) const
+/*
+--------------------FUNCTION----------------------------------------
+*/
+void	Dog::makeSound() const
 {
-	return(this->type);
-}
-
-void	Animal::makeSound() const
-{
-	std::cout << "Animal sounds" << std::endl;
+	std::cout << "Woaf waf woaf" << std::endl;
 }
