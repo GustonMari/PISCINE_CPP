@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 07:33:54 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/28 10:17:08 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/28 10:24:42 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ DiamondTrap::DiamondTrap(std::string new_name): name(new_name + "_clap_name")
 	std::cout << "\e[1;32mDiamondTrap "<< name <<" was constructed\e[0m" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap & src): ClapTrap(src), ScavTrap(src), 
+DiamondTrap::DiamondTrap(const DiamondTrap & src): ClapTrap(src), ScavTrap(src), FragTrap(src)
 {
-	*this = src;
+	this->name = src.name;
 }
 
 DiamondTrap::~DiamondTrap()
@@ -53,6 +53,8 @@ DiamondTrap::~DiamondTrap()
 
 DiamondTrap	&DiamondTrap::operator=(const DiamondTrap & src)
 {
+	ScavTrap::operator=(src);
+	FragTrap::operator=(src);
 	this->name = src.name;
 	return (*this);
 }

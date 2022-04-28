@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:34:45 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/28 10:15:01 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/28 10:27:04 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,15 +70,19 @@
 int main()
 {
 	//ATTENTION DIAMOND_TRAP DOIT AVOIR LE MM NAME QUE LES AUTRES CLASS ??
+	std::cout << "\n----------------NOTHING----------------------" << std::endl;
 	DiamondTrap	diamondtrap;
 	diamondtrap.whoAmI();
 	diamondtrap.attack("Omar");
-	std::cout << "\n--------------------------------------" << std::endl;
-	
+	std::cout << "\n----------------STR INPUT----------------------" << std::endl;
 	DiamondTrap	diamondtrap2("Gustave");
 	diamondtrap2.whoAmI();
-	std::cout << "\n--------------------------------------" << std::endl;
+	std::cout << "\n---------------COPY-----------------------" << std::endl;
 	DiamondTrap	diamondtrap3(diamondtrap2);
 	diamondtrap3.whoAmI();
+	std::cout << "\n---------------EQUAL-----------------------" << std::endl;
+	//diamondtrap = diamondtrap2;
+	//diamondtrap.whoAmI();
+	std::cout << "\n--------------------------------------" << std::endl;
 	return (0);
 }
