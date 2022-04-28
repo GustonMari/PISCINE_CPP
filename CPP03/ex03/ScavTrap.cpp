@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 17:10:00 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/27 10:45:05 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/28 09:38:14 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ScavTrap::ScavTrap(): ClapTrap(), gate_keeper(false)
 	hit_point = 100;
 	energy_point = 50;
 	attack_damage = 20;
-	std::cout << "ScavTrap Constructor" << std::endl;
+	std::cout << "ScavTrap "<< _name << " Constructor" << std::endl;
 }
 
 ScavTrap::~ScavTrap()

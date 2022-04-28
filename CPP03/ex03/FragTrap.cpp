@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 11:08:58 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/28 07:26:03 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/28 09:38:50 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ FragTrap::FragTrap(): ClapTrap()
 	hit_point = 100;
 	energy_point = 100;
 	attack_damage = 30;
-	std::cout << "FragTrap Constructor" << std::endl;
+	std::cout << "FragTrap "<< _name <<" Constructor" << std::endl;
 }
 
 FragTrap::~FragTrap()

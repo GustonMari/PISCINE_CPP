@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:34:45 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/28 08:58:53 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/28 10:15:01 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,20 +59,26 @@
 	https://www.programiz.com/cpp-programming/virtual-functions
 	virtual permet en gros de bypass une fonction dune class via virtual, ainsi on bypass
 	les doublons et on utilise seulement celle de claptrap
+
+	https://stackoverflow.com/questions/20790932/what-is-the-logic-behind-the-using-keyword-in-c
+	using est utiliser comme un alias (typedef)
+	https://stackoverflow.com/questions/51690394/overloading-member-function-among-multiple-base-classes
+	ATTENTION QUAND ON UTILISE using AVEC UNE AUTRE FONCTION ON DOT PAS AVOIR LES PARENTHESE!!!
 */
 
 
 int main()
 {
 	//ATTENTION DIAMOND_TRAP DOIT AVOIR LE MM NAME QUE LES AUTRES CLASS ??
-	DiamondTrap	DiamondTrap;
-	//DiamondTrap	DiamondTrap1("Marlo");
-	//DiamondTrap	DiamondTrap2("Omar");
-	//DiamondTrap	DiamondTrap3("Stringer Bell");
-	//DiamondTrap1.ScavTrap::attack("Omar");
-	//DiamondTrap2.ScavTrap::takeDamage(20);
-	//DiamondTrap3.ScavTrap::attack("Marlo");
-	//DiamondTrap1.ClapTrap::beRepaired(20);
-	//DiamondTrap1.FragTrap::highFivesGuys();
+	DiamondTrap	diamondtrap;
+	diamondtrap.whoAmI();
+	diamondtrap.attack("Omar");
+	std::cout << "\n--------------------------------------" << std::endl;
+	
+	DiamondTrap	diamondtrap2("Gustave");
+	diamondtrap2.whoAmI();
+	std::cout << "\n--------------------------------------" << std::endl;
+	DiamondTrap	diamondtrap3(diamondtrap2);
+	diamondtrap3.whoAmI();
 	return (0);
 }

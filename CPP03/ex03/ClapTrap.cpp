@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:45:46 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/26 16:26:47 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/28 09:37:42 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 */
 
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap(): _name("init"), hit_point(10), energy_point(10), attack_damage(0)
 {
-	std::cout << "ClapTrap constructor" << std::endl;
+	std::cout << "ClapTrap "<< _name << " constructor" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name): _name(name), hit_point(10), energy_point(10), attack_damage(0)
