@@ -16,13 +16,13 @@
 --------------------CONSTRUCTOR----------------------------------------
 */
 
-Cat::Cat()
+Cat::Cat(): attribute(new Brain())
 {
 	Animal::type = "Cat";
 	std::cout << "Cat was constructed" << std::endl;
 }
 
-Cat::Cat(std::string name)
+Cat::Cat(std::string name): attribute(new Brain())
 {
 	this->type = name;
 	std::cout << "Cat " << type << "was constructed" << std::endl;
@@ -30,12 +30,14 @@ Cat::Cat(std::string name)
 
 Cat::Cat(const Cat & src)
 {
+	attribute = new Brain();
 	*this = src;
 	std::cout << "Cat was copy constructed" << std::endl;
 }
 
 Cat::~Cat()
 {
+	delete attribute;
 	std::cout << "Cat was destructed" << std::endl;
 }
 
@@ -46,6 +48,7 @@ Cat::~Cat()
 Cat	& Cat::operator=(const Cat &src)
 {
 	this->Animal::type = src.Animal::type;
+	this->attribute = src.attribute;
 	this->type = src.type;
 	return (*this);
 }

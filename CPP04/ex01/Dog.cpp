@@ -19,23 +19,27 @@
 Dog::Dog()
 {
 	Animal::type = "Dog";
+	attribute = new Brain();
 	std::cout << "Dog was constructed" << std::endl;
 }
 
 Dog::Dog(std::string name)
 {
 	this->type = name;
+	attribute = new Brain();
 	std::cout << "Dog " << type << "was constructed" << std::endl;
 }
 
 Dog::Dog(const Dog & src)
 {
+	attribute = new Brain();
 	*this = src;
 	std::cout << "Dog was copy constructed" << std::endl;
 }
 
 Dog::~Dog()
 {
+	delete attribute;
 	std::cout << "Dog was destructed" << std::endl;
 }
 
@@ -46,6 +50,7 @@ Dog::~Dog()
 Dog	& Dog::operator=(const Dog &src)
 {
 	this->type = src.type;
+	this->attribute = src.attribute;
 	return (*this);
 }
 

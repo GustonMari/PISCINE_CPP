@@ -27,6 +27,7 @@ class	Cat: public Animal
 		virtual void	makeSound() const;
 	protected:
 		std::string	type;
+		Brain * attribute;
 };
 
 #endif

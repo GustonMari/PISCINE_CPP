@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:46:08 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/28 15:33:36 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/03 07:34:22 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ANIMAL_HPP
 # include <iostream>
 # include <string>
+# include "Brain.hpp"
 
 class	Animal
 {

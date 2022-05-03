@@ -26,7 +26,8 @@ class	Dog: public Animal
 		Dog	&operator=(const Dog & src);
 		virtual void	makeSound() const;
 	protected:
-		//std::string	type;
+		std::string	type;
+		Brain * attribute;
 };
 
 #endif
