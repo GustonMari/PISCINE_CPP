@@ -34,6 +34,7 @@ Brain	& Brain::operator=(const Brain &src)
 		ideas[i] = src.ideas[i];
 		i++;
 	}
+	std::cout << "Brain = operator called" << std::endl;
 	return (*this);
 }
 
@@ -57,7 +58,7 @@ void	Brain::show_ideas()
 void	Brain::set_ideas(int index, std::string thought)
 {
 	if (index >= 0 && index < 100)
-		ideas[index] = thought[index];
+		ideas[index] = thought;
 	else
 		std::cout << "I've too many thought" << std::endl;
 }

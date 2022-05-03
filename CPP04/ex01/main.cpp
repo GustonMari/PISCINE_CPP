@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:44:42 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/03 08:36:47 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/03 08:54:37 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,20 @@ int main()
 		delete wild_animal[i];
 		i++;
 	}
-	std::cout << UMAG << "Third Test" << CRESET << std::endl;
-	
+	std::cout << UMAG << "Third Test: deep copy test" << CRESET << std::endl;
+	std::cout << UCYN << "crazy man" << CRESET << std::endl;
+	Brain	crazy_man;
+	crazy_man.set_ideas(0, "Suis-je fou ?");
+	crazy_man.set_ideas(1, "mais qui suis je?");
+	crazy_man.set_ideas(2, "tu as dis quoi ?");
+	crazy_man.show_ideas();
+	std::cout << UCYN << "normal man" << CRESET << std::endl;
+	Brain	normal_man(crazy_man);
+	normal_man.show_ideas();
+	std::cout << UCYN << "weird man" << CRESET << std::endl;
+	Brain	weird_man;
+	weird_man = normal_man;
+	weird_man.show_ideas();
 	return 0;
 }
 
