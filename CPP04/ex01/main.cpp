@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:44:42 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/03 08:54:37 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/03 09:20:58 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@
 	ATTENTION: lorsque on a une fonction virtual
 	il nous faut un destructeur virtuel aussi, cela a avoir avec l'allocation
 	you HAVE TO provide a definition for destructors, even if they are pure virtual.
+
+= 0 means derived classes must provide an implementation, not that the base class can not provide an implementation.
+
+In practice, when you mark a virtual function as pure (=0), there is very little point in providing a definition,
+ because it will never be called unless someone explicitly does so via Base::Function(...) or if the Base class constructor calls the virtual function in question
+
+	TO DO : passer par une fonction virtuel pour recuperer le brain de animals contenue dans cat et dog
 */
 
 //need to do set type, check copy et operator=   ------------------------------------------------------------------------------------
