@@ -18,7 +18,7 @@
 
 Dog::Dog()
 {
-	Animal::type = "Dog";
+	AAnimal::type = "Dog";
 	attribute = new Brain();
 	std::cout << "Dog was constructed" << std::endl;
 }
@@ -30,7 +30,7 @@ Dog::Dog(std::string name)
 	std::cout << "Dog " << type << "was constructed" << std::endl;
 }
 
-Dog::Dog(const Dog & src): Animal(src)
+Dog::Dog(const Dog & src): AAnimal(src)
 {
 	attribute = new Brain();
 	*this = src;
@@ -57,12 +57,6 @@ Dog	& Dog::operator=(const Dog &src)
 /*
 --------------------FUNCTION----------------------------------------
 */
-
-Brain 	& Dog::getBrain() const
-{
-	return (*attribute);
-}
-
 void	Dog::makeSound() const
 {
 	std::cout << "Woaf waf woaf" << std::endl;

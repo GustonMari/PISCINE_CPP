@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:44:42 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/18 14:25:55 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/18 15:35:57 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@
 # include "colors.h"
 # define NUMBER_ANIMALS 6
 /*
-	ATTENTION: lorsque on a une fonction virtual
-	il nous faut un destructeur virtuel aussi, cela a avoir avec l'allocation
-	you HAVE TO provide a definition for destructors, even if they are pure virtual.
+ It is common practice to make base class constructors protected. 
+ When you have a pure-virtual function in your base class, 
+ this is not required, as you wouldn't be able to instantiate it.
 
-= 0 means derived classes must provide an implementation, not that the base class can not provide an implementation.
+However, defining a non-pure virtual function in a base class is not considered good practice,
+ but heavily depends on your use case and does not harm.
 
-In practice, when you mark a virtual function as pure (=0), there is very little point in providing a definition,
- because it will never be called unless someone explicitly does so via Base::Function(...) or if the Base class constructor calls the virtual function in question
-
-	TO DO : passer par une fonction virtuel pour recuperer le brain de animals contenue dans cat et dog
+There isn't any disadvantage or side-effect. 
+With a protected constructor you just tell other developers that your class is only intended to be used as a base.
+https://www.geeksforgeeks.org/pure-virtual-functions-and-abstract-classes/
 */
 
 //need to do set type, check copy et operator=   ------------------------------------------------------------------------------------
@@ -35,14 +35,21 @@ In practice, when you mark a virtual function as pure (=0), there is very little
 int main()
 {
 	int	i;
+
+	std::cout << UMAG << "To check if animal cannot be instanciated supress the comment below" << CRESET << std::endl;
+	//AAnimal is protected so it can't be instanciated
+	//L'autre solution est de faire une fonction pure virtual ainsi la class devient abstraite
+	//et on ne peut l'instantier
+	//AAnimal A;
+	//AAnimal A();
 	//TEST LEAK MEMOMRY
 	std::cout << UMAG << "First Test" << CRESET << std::endl;
-	const Animal *doggy = new Dog();
-	const Animal *catty = new Cat();
+	const AAnimal *doggy = new Dog();
+	const AAnimal *catty = new Cat();
 	delete catty;
 	delete doggy;
-	//TEST ARRAY ANIMAL
-	Animal *wild_animal[NUMBER_ANIMALS];
+	//TEST ARRAY AAnimal
+	AAnimal *wild_animal[NUMBER_ANIMALS];
 	std::cout << UMAG << "Second Test" << CRESET << std::endl;
 	i = 0;
 	while (i < NUMBER_ANIMALS)
@@ -77,19 +84,3 @@ int main()
 	return 0;
 }
 
-/* int main()
-{
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-j->makeSound();
-meta->makeSound();
-
-delete	meta;
-delete	i;
-delete	j;
-return 0;
-} */

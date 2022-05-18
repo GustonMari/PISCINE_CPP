@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 12:46:08 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/28 12:56:43 by gmary            ###   ########.fr       */
+/*   Created: 2022/05/02 09:38:38 by gmary             #+#    #+#             */
+/*   Updated: 2022/05/03 08:14:27 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
-# include <iostream>
-# include <string>
-# include "Animal.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-class	Dog: public Animal
+#include "Animal.hpp"
+
+class Brain
 {
 	public:
-		Dog();
-		Dog(std::string name);
-		Dog(const Dog & src);
-		virtual ~Dog();
-		Dog	&operator=(const Dog & src);
-		virtual void	makeSound() const;
-		virtual Brain	&getBrain() const;
+		Brain();
+		Brain(const Brain & src);
+		~Brain();
+		Brain &operator=(const Brain & src);
+		void	show_ideas();
+		void	set_ideas(int index, std::string thought);
 	protected:
-		std::string	type;
-		Brain * attribute;
+		std::string	ideas[100];
+	
 };
 
 #endif

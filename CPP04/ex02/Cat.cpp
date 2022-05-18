@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,47 +10,46 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
 /*
 --------------------CONSTRUCTOR----------------------------------------
 */
 
-Dog::Dog()
+Cat::Cat(): attribute(new Brain())
 {
-	Animal::type = "Dog";
-	attribute = new Brain();
-	std::cout << "Dog was constructed" << std::endl;
+	AAnimal::type = "Cat";
+	std::cout << "Cat was constructed" << std::endl;
 }
 
-Dog::Dog(std::string name)
+Cat::Cat(std::string name): attribute(new Brain())
 {
 	this->type = name;
-	attribute = new Brain();
-	std::cout << "Dog " << type << "was constructed" << std::endl;
+	std::cout << "Cat " << type << "was constructed" << std::endl;
 }
 
-Dog::Dog(const Dog & src): Animal(src)
+Cat::Cat(const Cat & src): AAnimal(src)
 {
 	attribute = new Brain();
 	*this = src;
-	std::cout << "Dog was copy constructed" << std::endl;
+	std::cout << "Cat was copy constructed" << std::endl;
 }
 
-Dog::~Dog()
+Cat::~Cat()
 {
 	delete attribute;
-	std::cout << "Dog was destructed" << std::endl;
+	std::cout << "Cat was destructed" << std::endl;
 }
 
 /*
 --------------------OPERATOR----------------------------------------
 */
 
-Dog	& Dog::operator=(const Dog &src)
+Cat	& Cat::operator=(const Cat &src)
 {
-	this->type = src.type;
+	this->AAnimal::type = src.AAnimal::type;
 	this->attribute = src.attribute;
+	this->type = src.type;
 	return (*this);
 }
 
@@ -58,12 +57,7 @@ Dog	& Dog::operator=(const Dog &src)
 --------------------FUNCTION----------------------------------------
 */
 
-Brain 	& Dog::getBrain() const
+void	Cat::makeSound() const
 {
-	return (*attribute);
-}
-
-void	Dog::makeSound() const
-{
-	std::cout << "Woaf waf woaf" << std::endl;
+	std::cout << "Miiiiiiaaaouuuu" << std::endl;
 }

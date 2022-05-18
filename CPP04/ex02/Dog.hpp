@@ -16,7 +16,7 @@
 # include <string>
 # include "Animal.hpp"
 
-class	Dog: public Animal
+class	Dog: public AAnimal
 {
 	public:
 		Dog();
@@ -25,7 +25,6 @@ class	Dog: public Animal
 		virtual ~Dog();
 		Dog	&operator=(const Dog & src);
 		virtual void	makeSound() const;
-		virtual Brain	&getBrain() const;
 	protected:
 		std::string	type;
 		Brain * attribute;

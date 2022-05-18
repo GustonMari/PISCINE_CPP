@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 # include <iostream>
 # include <string>
 # include "Animal.hpp"
 
-class	Dog: public Animal
+class	Cat: public AAnimal
 {
 	public:
-		Dog();
-		Dog(std::string name);
-		Dog(const Dog & src);
-		virtual ~Dog();
-		Dog	&operator=(const Dog & src);
+		Cat();
+		Cat(std::string name);
+		Cat(const Cat & src);
+		virtual ~Cat();
+		Cat	&operator=(const Cat & src);
 		virtual void	makeSound() const;
-		virtual Brain	&getBrain() const;
 	protected:
 		std::string	type;
 		Brain * attribute;

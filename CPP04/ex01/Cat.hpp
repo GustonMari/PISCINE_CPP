@@ -25,6 +25,7 @@ class	Cat: public Animal
 		virtual ~Cat();
 		Cat	&operator=(const Cat & src);
 		virtual void	makeSound() const;
+		virtual Brain	&getBrain() const;
 	protected:
 		std::string	type;
 		Brain * attribute;

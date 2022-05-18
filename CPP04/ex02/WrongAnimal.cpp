@@ -1,63 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:51:39 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/18 14:01:22 by gmary            ###   ########.fr       */
+/*   Updated: 2022/04/28 15:00:21 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-/*
-	CONSTRUCTOR
-*/
-
-Animal::Animal()
+WrongAnimal::WrongAnimal()
 {
-	std::cout << "Animal " << type << " was constructed" << std::endl;
+	std::cout << "WrongAnimal " << type << " was constructed" << std::endl;
 }
 
-Animal::Animal(std::string name)
+WrongAnimal::WrongAnimal(std::string name)
 {
 	this->type = name;
-	std::cout << "Animal " << type << "was constructed" << std::endl;
+	std::cout << "WrongAnimal " << type << "was constructed" << std::endl;
 }
 
-Animal::Animal(const Animal & src)
+WrongAnimal::WrongAnimal(const WrongAnimal & src)
 {
 	*this = src;
-	std::cout << "Animal was copy constructed" << std::endl;
+	std::cout << "WrongAnimal was copy constructed" << std::endl;
 }
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Animal \'" << type << "\' was  destructed" << std::endl;
+	std::cout << "WrongAnimal \'" << type << "\' was  destructed" << std::endl;
 }
 
-/*
-	OPERATOR OVERLOAD
-*/
-
-Animal	& Animal::operator=(const Animal &src)
+WrongAnimal	& WrongAnimal::operator=(const WrongAnimal &src)
 {
 	this->type = src.type;
 	return (*this);
 }
 
-/*
-	FUNCTION
-*/
-
-std::string	Animal::getType(void) const
+std::string	WrongAnimal::getType(void) const
 {
 	return(this->type);
 }
 
-void	Animal::makeSound() const
+void	WrongAnimal::makeSound() const
 {
-	std::cout << "Animal sounds" << std::endl;
+	std::cout << "WrongAnimal sounds" << std::endl;
 }

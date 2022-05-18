@@ -57,6 +57,11 @@ Cat	& Cat::operator=(const Cat &src)
 --------------------FUNCTION----------------------------------------
 */
 
+Brain	& Cat::getBrain() const
+{
+	return (*attribute);
+}
+
 void	Cat::makeSound() const
 {
 	std::cout << "Miiiiiiaaaouuuu" << std::endl;

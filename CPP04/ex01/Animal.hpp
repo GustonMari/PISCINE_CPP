@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:46:08 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/03 07:34:22 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/18 14:25:43 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class	Animal
 		Animal	&operator=(const Animal & src);
 		virtual void	makeSound() const;
 		std::string getType() const;
+		//virtual Brain	&getBrain() const;
 	protected:
 		std::string	type;
 };

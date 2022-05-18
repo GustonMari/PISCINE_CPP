@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,47 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 
 /*
 --------------------CONSTRUCTOR----------------------------------------
 */
 
-Dog::Dog()
+WrongCat::WrongCat()
 {
-	Animal::type = "Dog";
-	attribute = new Brain();
-	std::cout << "Dog was constructed" << std::endl;
+	WrongAnimal::type = "WrongCat";
+	std::cout << "WrongCat was constructed" << std::endl;
 }
 
-Dog::Dog(std::string name)
+WrongCat::WrongCat(std::string name)
 {
 	this->type = name;
-	attribute = new Brain();
-	std::cout << "Dog " << type << "was constructed" << std::endl;
+	std::cout << "WrongCat " << type << "was constructed" << std::endl;
 }
 
-Dog::Dog(const Dog & src): Animal(src)
+WrongCat::WrongCat(const WrongCat & src): WrongAnimal(src)
 {
-	attribute = new Brain();
 	*this = src;
-	std::cout << "Dog was copy constructed" << std::endl;
+	std::cout << "WrongCat was copy constructed" << std::endl;
 }
 
-Dog::~Dog()
+WrongCat::~WrongCat()
 {
-	delete attribute;
-	std::cout << "Dog was destructed" << std::endl;
+	std::cout << "WrongCat was destructed" << std::endl;
 }
 
 /*
 --------------------OPERATOR----------------------------------------
 */
 
-Dog	& Dog::operator=(const Dog &src)
+WrongCat	& WrongCat::operator=(const WrongCat &src)
 {
+	this->WrongAnimal::type = src.WrongAnimal::type;
 	this->type = src.type;
-	this->attribute = src.attribute;
 	return (*this);
 }
 
@@ -58,12 +54,7 @@ Dog	& Dog::operator=(const Dog &src)
 --------------------FUNCTION----------------------------------------
 */
 
-Brain 	& Dog::getBrain() const
+void	WrongCat::makeSound() const
 {
-	return (*attribute);
-}
-
-void	Dog::makeSound() const
-{
-	std::cout << "Woaf waf woaf" << std::endl;
+	std::cout << "MIIIIIIIIAAAAAOUUUU JE SUIS LE MAUVAIS CHAT" << std::endl;
 }

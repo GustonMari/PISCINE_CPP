@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:51:39 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/18 14:01:22 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/18 14:28:42 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,33 +16,33 @@
 	CONSTRUCTOR
 */
 
-Animal::Animal()
+AAnimal::AAnimal()
 {
-	std::cout << "Animal " << type << " was constructed" << std::endl;
+	std::cout << "AAnimal " << type << " was constructed" << std::endl;
 }
 
-Animal::Animal(std::string name)
+AAnimal::AAnimal(std::string name)
 {
 	this->type = name;
-	std::cout << "Animal " << type << "was constructed" << std::endl;
+	std::cout << "AAnimal " << type << "was constructed" << std::endl;
 }
 
-Animal::Animal(const Animal & src)
+AAnimal::AAnimal(const AAnimal & src)
 {
 	*this = src;
-	std::cout << "Animal was copy constructed" << std::endl;
+	std::cout << "AAnimal was copy constructed" << std::endl;
 }
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
-	std::cout << "Animal \'" << type << "\' was  destructed" << std::endl;
+	std::cout << "AAnimal \'" << type << "\' was  destructed" << std::endl;
 }
 
 /*
 	OPERATOR OVERLOAD
 */
 
-Animal	& Animal::operator=(const Animal &src)
+AAnimal	& AAnimal::operator=(const AAnimal &src)
 {
 	this->type = src.type;
 	return (*this);
@@ -52,12 +52,12 @@ Animal	& Animal::operator=(const Animal &src)
 	FUNCTION
 */
 
-std::string	Animal::getType(void) const
+std::string	AAnimal::getType(void) const
 {
 	return(this->type);
 }
 
-void	Animal::makeSound() const
+void	AAnimal::makeSound() const
 {
-	std::cout << "Animal sounds" << std::endl;
+	std::cout << "AAnimal sounds" << std::endl;
 }
