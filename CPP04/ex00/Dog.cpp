@@ -28,7 +28,7 @@ Dog::Dog(std::string name)
 	std::cout << "Dog " << type << "was constructed" << std::endl;
 }
 
-Dog::Dog(const Dog & src)
+Dog::Dog(const Dog & src): Animal(src)
 {
 	*this = src;
 	std::cout << "Dog was copy constructed" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:51:39 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/28 15:00:21 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/18 13:13:08 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Animal::Animal(std::string name)
 	std::cout << "Animal " << type << "was constructed" << std::endl;
 }
 
-Animal::Animal(const Animal & src)
+Animal::Animal(const Animal & src): type(src.type)
 {
 	*this = src;
 	std::cout << "Animal was copy constructed" << std::endl;

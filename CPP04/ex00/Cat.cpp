@@ -28,7 +28,7 @@ Cat::Cat(std::string name)
 	std::cout << "Cat " << type << "was constructed" << std::endl;
 }
 
-Cat::Cat(const Cat & src)
+Cat::Cat(const Cat & src): Animal(src)
 {
 	*this = src;
 	std::cout << "Cat was copy constructed" << std::endl;
