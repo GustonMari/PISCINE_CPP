@@ -28,7 +28,7 @@ WrongCat::WrongCat(std::string name)
 	std::cout << "WrongCat " << type << "was constructed" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat & src)
+WrongCat::WrongCat(const WrongCat & src): WrongAnimal(src)
 {
 	*this = src;
 	std::cout << "WrongCat was copy constructed" << std::endl;

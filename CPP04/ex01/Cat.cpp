@@ -28,7 +28,7 @@ Cat::Cat(std::string name): attribute(new Brain())
 	std::cout << "Cat " << type << "was constructed" << std::endl;
 }
 
-Cat::Cat(const Cat & src)
+Cat::Cat(const Cat & src): Animal(src)
 {
 	attribute = new Brain();
 	*this = src;
