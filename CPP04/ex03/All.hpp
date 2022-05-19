@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 10:23:47 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/19 11:04:17 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/19 17:25:13 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 
 # include <iostream>
 # include <string>
-# include "colors.hpp"
+# include "colors.h"
 # include "AMateria.hpp"
-# include "Character.hpp"
 # include "Cure.hpp"
 # include "Ice.hpp"
-# include "Icharacter.hpp"
+# include "ICharacter.hpp"
+# include "Character.hpp"
 # include "MateriaSource.hpp"
+# include "IMateriaSource.hpp"
 
 #endif

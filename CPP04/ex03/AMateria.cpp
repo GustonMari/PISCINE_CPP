@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 16:06:19 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/19 13:13:29 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/19 17:10:04 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /*
 	CONSTRUCTOR
 */
+
 AMateria::AMateria(std::string const & type): _type(type)
 {
 	std::cout << BRED "Materia " << type << " was constructed" CRESET << std::endl;
@@ -27,17 +28,22 @@ AMateria::AMateria(): _type("?????????")
 
 AMateria::AMateria(AMateria const & src)
 {
-	std::cout << BRED "Materia " << src.type << " was copy constructed" CRESET << std::endl;
+	std::cout << BRED "Materia " << src._type << " was copy constructed" CRESET << std::endl;
 	*this = src;
+}
+
+AMateria::~AMateria()
+{
+	std::cout << "AMateria has been destroyed" << std::endl;
 }
 
 /*
 	OPERATOR OVERLOAD
 */
 
-AMateria AMateria::&operator=(AMateria const & src)
+AMateria	&AMateria::operator=(AMateria const & src)
 {
-	this->type = src.type;
+	this->_type = src._type;
 	return (*this);
 }
 
@@ -47,12 +53,13 @@ AMateria AMateria::&operator=(AMateria const & src)
 
 //ici on retourne une const ref sur _type bien utile
 
-/* std::string	const & AMateria::getType(void) const
+std::string	const & AMateria::getType(void) const
 {
 	return (_type);
-} */
+}
 
+//WARNING que faire ici ??
 void		AMateria::use(ICharacter & target)
 {
-	
+	std::cout << BMAG "USING MATERIA" CRESET << std::endl;
 }
