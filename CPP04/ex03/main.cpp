@@ -6,9 +6,17 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 17:03:28 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/19 10:57:35 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/19 13:12:28 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+	getter de AMateria retourne une const ref de _type ce qui est bien pratique
+	la fonction clone dans AMateria n'est pas a definir dans AMAteria.cpp car
+	elle est pure
+	Les méthodes virtuelles pures ont généralement 
+	une déclaration ( signature ) et aucune définition ( implémentation ).
+*/
 
 
 int	 main()
