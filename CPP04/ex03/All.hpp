@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   All.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/18 16:22:29 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/19 10:57:13 by gmary            ###   ########.fr       */
+/*   Created: 2022/05/19 10:23:47 by gmary             #+#    #+#             */
+/*   Updated: 2022/05/19 10:59:42 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-#define ICHARACTER_HPP
-# include "All.hpp"
+#ifndef ALL_HPP
+# define ALL_HPP
 
-class ICharacter
-{
-	public:
-		virtual ~ICharacter() {}
-		virtual std::string const & getName() const = 0;
-		virtual void equip(AMateria* m) = 0;
-		virtual void unequip(int idx) = 0;
-		virtual void use(int idx, ICharacter& target) = 0;
-};
+# include <iostream>
+# include <string>
+# include "AMateria.hpp"
+# include "Character.hpp"
+# include "Cure.hpp"
+# include "Ice.hpp"
+# include "Icharacter.hpp"
+# include "MateriaSource.hpp"
 
 #endif

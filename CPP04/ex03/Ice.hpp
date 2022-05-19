@@ -6,14 +6,13 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 16:12:22 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/18 17:12:31 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/19 10:56:52 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICE_HPP
-#define ICE_HPP
-#include "AMateria.hpp"
-#include "ICharacter.hpp"
+# define ICE_HPP
+# include "All.hpp"
 //attention si on clone ondoit allouer de la memoire
 
 class Ice: public AMateria, public ICharacter

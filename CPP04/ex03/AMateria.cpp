@@ -6,11 +6,11 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 16:06:19 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/18 16:07:33 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/19 10:57:04 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+# include "All.hpp"
 
 /*
 	CONSTRUCTOR

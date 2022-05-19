@@ -6,14 +6,13 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 16:03:04 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/18 16:08:24 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/19 10:59:49 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AMATERIA_HPP
 # define AMATERIA_HPP
-# include <iostream>
-# include <string>
+# include "All.hpp"
 
 class	AMateria
 {
