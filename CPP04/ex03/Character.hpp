@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 17:09:30 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/19 16:43:38 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/19 17:38:30 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define CHARACTER_HPP
 # include "All.hpp"
 
-class Character: public ICharacter
+class Character: virtual public ICharacter
 {
 	public:
 		Character();

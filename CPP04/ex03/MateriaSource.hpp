@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 09:52:03 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/19 17:08:42 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/19 17:28:39 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define MATERIASOURCE_HPP
 # include "All.hpp"
 
-class MateriaSource: public IMateriaSource
+class MateriaSource: virtual public IMateriaSource
 {
 	public:
 		MateriaSource();

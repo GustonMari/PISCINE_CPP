@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 17:03:28 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/19 17:25:41 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/19 17:27:28 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@
 */
 #include "All.hpp"
 
-int	 main()
-{
+int	 main(void)
 {
 	//IMateriaSource* src = new MateriaSource();
 	//src->learnMateria(new Ice());

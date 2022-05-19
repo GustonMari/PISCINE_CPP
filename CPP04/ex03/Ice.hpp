@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 16:12:22 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/19 17:04:49 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/19 17:28:11 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Ice: virtual public AMateria
 		~Ice();
 		Ice		&operator=(Ice const & rhs);
 		AMateria	*clone() const;
-		void		use(ICharacter & target);
+		virtual void		use(ICharacter & target);
 	private:
 };
 
