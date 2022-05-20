@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 15:52:27 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/19 16:11:58 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/20 12:55:48 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ MateriaSource::~MateriaSource()
 		if (this->materias[i])
 			delete this->materias[i];
 	}
+	
 }
 
 /*
