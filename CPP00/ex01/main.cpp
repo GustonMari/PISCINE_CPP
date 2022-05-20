@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 21:02:02 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/14 11:48:48 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/20 13:35:49 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int ac, char **av)
 	(void)ac;
 	(void)av;
 	std::cout <<  BBLU "Welcome to my Phonebook App" CRESET << std::endl;
-	std::cout <<  BLU "EXIT | ADD | SHOW" CRESET << std::endl;
+	std::cout <<  BLU "EXIT | ADD | SEARCH" CRESET << std::endl;
 	while (1)
 	{
 		std::cout << GRN "Phone > " CRESET;

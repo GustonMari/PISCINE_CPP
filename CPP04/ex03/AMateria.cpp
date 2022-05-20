@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 16:06:19 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/20 10:26:08 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/20 14:30:45 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,10 @@ std::string	const & AMateria::getType(void) const
 
 void	AMateria::use(ICharacter & target)
 {
+	if (_type.compare("ice") == 0)
+		std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	else if (_type.compare("cure") == 0)
+		std::cout << "* heals" << target.getName() << "\'s wounds *" << std::endl;
 	(void)target;
 	std::cout << BMAG "USING MATERIA" CRESET << std::endl;
 }
