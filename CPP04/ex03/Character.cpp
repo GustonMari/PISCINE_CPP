@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 17:14:06 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/20 16:00:53 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/23 13:28:42 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,9 @@ void	Character::use(int idx	, ICharacter & target)
 		return ;
 	(void)target;
 	(void)idx;
-
-	std::cout << _inventory[idx]->getType() << std::endl;
-	std::cout << target.getName() << std::endl;
-	//_inventory[idx]->use(target);
+	//std::cout << _inventory[idx]->getType() << std::endl;
+	//std::cout << target.getName() << std::endl;
+	_inventory[idx]->use(target);
 }
 
 void	Character::equip(AMateria *m)

@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 17:03:28 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/20 16:00:40 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/23 13:27:01 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,24 +36,30 @@
 
 int	 main(void)
 {
-	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
+	AMateria *test = new Cure();
 	ICharacter* me = new Character("me");
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	ICharacter* bob = new Character("bob");
-	(void)me;
-	(void)src;
-	(void)tmp;
-	me->use(0, *bob);
+	me->use(0, *me);
+	(void)test;
+	//test->use(*me);
+	//IMateriaSource* src = new MateriaSource();
+	//src->
+	//src->learnMateria(new Ice());
+	//src->learnMateria(new Cure());
+	//ICharacter* me = new Character("me");
+	//AMateria* tmp;
+	//tmp = src->createMateria("ice");
+	//me->equip(tmp);
+	//tmp = src->createMateria("cure");
+	//me->equip(tmp);
+	//ICharacter* bob = new Character("bob");
+	//(void)me;
+	//(void)src;
+	//(void)tmp;
+	//me->use(0, *bob);
 	//me->use(1, *bob);
-	delete bob;
-	delete me;
-	delete src;
+	//delete bob;
+	//delete me;
+	//delete src;
 	return 0;
 }
 /* 

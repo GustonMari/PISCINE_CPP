@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 16:20:04 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/19 14:25:02 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/23 13:22:53 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 Cure::Cure()
 {
 	std::cout << UBLU "Cure was constructed"  CRESET << std::endl;
+	setType("cure");
 }
 
 Cure::Cure(Cure const & src): AMateria(src)
@@ -53,5 +54,10 @@ AMateria	* Cure::clone(void) const
 
 void	Cure::use(ICharacter & target)
 {
-	std::cout << "* heals" << target.getName() << "\'s wounds *" << std::endl;
+	std::cout << "* heals " << target.getName() << "\'s wounds *" << std::endl;
+}
+
+void	Cure::setType(std::string const & type)
+{
+	AMateria::setType(type);
 }

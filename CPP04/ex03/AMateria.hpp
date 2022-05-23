@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 16:03:04 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/19 18:08:14 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/23 13:19:42 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class	AMateria
 		std::string const & getType() const; //Returns the materia type
 		virtual AMateria* clone() const = 0; //function pure virtual
 		virtual void use(ICharacter& target);
+		virtual void setType(std::string const & type);
 	protected:
 		std::string _type;
 		//more to add

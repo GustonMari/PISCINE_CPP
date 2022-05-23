@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 16:11:39 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/19 15:39:09 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/23 13:20:37 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 Ice::Ice()
 {
 	std::cout << UBLU "Ice was constructed"  CRESET << std::endl;
+	setType("ice");
 }
 
 Ice::Ice(Ice const & src): AMateria(src)
@@ -56,4 +57,9 @@ AMateria	* Ice::clone(void) const
 void	Ice::use(ICharacter & target)
 {
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+}
+
+void 	Ice::setType(std::string const & type)
+{
+	AMateria::setType(type);
 }

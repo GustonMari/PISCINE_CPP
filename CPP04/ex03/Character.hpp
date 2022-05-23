@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 17:09:30 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/20 15:57:01 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/23 12:58:33 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Character: virtual public ICharacter
 	private:
 		AMateria	*_inventory[4];
 		int			_inventory_size;
-		std::string name;
+		std::string	name;
 };
 
 #endif
