@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 21:02:02 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/20 13:35:49 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/23 14:24:12 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ int	main(int ac, char **av)
 	{
 		std::cout << GRN "Phone > " CRESET;
 		std::getline(std::cin, input);
+		if (input.empty())
+		{
+			std::cout << "EXIT ctrl D used" << std::endl;
+			return(0);
+		}
 		if (input.compare("EXIT") == 0)
 		{
 			std::cout <<  BRED << "EXIT" << CRESET << std::endl;

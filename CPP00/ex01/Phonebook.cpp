@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 21:40:28 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/14 12:02:54 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/23 15:08:54 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Phonebook.hpp"
 #include "Contact.hpp"
 #include <stdlib.h>
+#include <iomanip>
 
 /*
 	str.empty()
@@ -72,19 +73,42 @@ void	PhoneBook::search_contact()
 	}
 	std::cout << "wich contact do you want?" << std::endl;
 	std::getline(std::cin , str);
+	if (str.empty())
+	{
+		std::cout << BRED "\nEXIT ctrl D used"  CRESET << std::endl;
+		exit(0);
+	}
 	number = atol(str.c_str());
 	if (number < 0 || number > nb_contact - 1)
 	{
 		std::cout << "No contact present" << std::endl;
 		return ;
 	}
-	std::cout << "index     | firstname| last name|  nickname|    number|" << std::endl;
-	std::cout << "         " << number << "|";
+	std::cout << std::setw(10) << "index" << "|" 
+			<< std::setw(10) << "firstname" << "|"
+			<< std::setw(10) << "lastname" << "|"
+			<< std::setw(10) << "nickname" << "|"
+			<< std::setw(10) << "number" << "|" << std::endl;
+	//std::cout << "index     | firstname| last name|  nickname|    number|" << std::endl;
+	std::cout << std::setw(10) << number << "|";
 	make_ten_wider(repertory[number].get_name());
 	make_ten_wider(repertory[number].get_last_name());
 	make_ten_wider(repertory[number].get_nickname());
 	make_ten_wider(repertory[number].get_number());
 	std::cout << std::endl;
+}
+
+std::string get_contact_string(void)
+{
+	std::string	str;
+
+	std::getline(std::cin, str);
+	if (str.empty())
+	{
+		std::cout << BRED "\nEXIT ctrl D used"  CRESET << std::endl;
+		exit(0);
+	}
+	return (str);
 }
 
 void	PhoneBook::get_contact()
@@ -96,31 +120,31 @@ void	PhoneBook::get_contact()
 	do
 	{
 		std::cout << index << " - first name: ";
-		std::getline(std::cin, str);
+		str = get_contact_string();
 		repertory[index].set_name(str);
 	} while (str.empty());
 	do
 	{
 		std::cout << index << " - last name: ";
-		std::getline(std::cin, str);
+		str = get_contact_string();
 		repertory[index].set_last_name(str);
 	} while (str.empty());
 	do
 	{
 		std::cout << index << " - nickname: ";
-		std::getline(std::cin, str);
+		str = get_contact_string();
 		repertory[index].set_nickname(str);
 	} while (str.empty());
 	do
 	{
 		std::cout << index << " - phone number: ";
-		std::getline(std::cin, str);
+		str = get_contact_string();
 		repertory[index].set_number(str);
 	} while (str.empty());
 	do
 	{
 		std::cout << index << " - darkest secret: ";
-		std::getline(std::cin, str);
+		str = get_contact_string();
 		repertory[index].set_darkest_secret(str);
 	} while (str.empty());
 	if (nb_contact < 8)
