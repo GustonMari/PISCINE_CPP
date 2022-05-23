@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 16:06:19 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/23 13:29:38 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/23 15:52:54 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,6 @@ std::string	const & AMateria::getType(void) const
 	return (_type);
 }
 
-//WARNING que faire ici ??
-/* void		AMateria::use(ICharacter & target)
-{
-	(void) target;
-	std::cout << BMAG "USING MATERIA" CRESET << std::endl;
-} */
 
 void	AMateria::use(ICharacter & target)
 {
