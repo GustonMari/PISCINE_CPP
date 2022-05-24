@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:13:58 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/24 15:37:10 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/24 18:11:38 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@
 int	main(void)
 {
 	//! INIT
-	Bureaucrat mayor("Charles", -1);
+	Bureaucrat mayor("Charles", -1) ;
 	std::cout << mayor;
 	Bureaucrat mayor_2("Jacques", 151);
 	////! INCREMENT DECREMENT
@@ -54,3 +54,20 @@ int	main(void)
 	std::cout << mayor_4;
 	return (0);
 }
+
+/* int	main(void)
+{
+	//! INIT
+	Bureaucrat mayor("Charles", -1);
+	std::cout << mayor;
+	Bureaucrat mayor_2("Jacques", 151);
+	////! INCREMENT DECREMENT
+	Bureaucrat mayor_3("Pierre", 1);
+	Bureaucrat mayor_4("Jean-Michel", 150);
+	mayor_4.decrementGrade();
+	mayor_3.incrementGrade();
+	std::cout << "Name: " << mayor_3.getName() << std::endl;
+	std::cout << "Grade: " << mayor_3.getGrade() << std::endl;
+	std::cout << mayor_4;
+	return (0);
+} */

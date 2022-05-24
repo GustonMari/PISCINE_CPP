@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:13:58 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/24 16:20:37 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/24 18:50:47 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,12 @@
 	https://stackoverflow.com/questions/1669514/should-i-inherit-from-stdexception
 	https://stackoverflow.com/questions/6755991/catching-stdexception-by-reference
 	https://stackoverflow.com/questions/5230463/what-does-this-function-declaration-mean-in-c
-	dansle getter il ne faut pas retourner const int  car cela cree une erreur e compilation
+	-dansle getter il ne faut pas retourner const int  car cela cree une erreur e compilation
 	mais ne cree pas derreur de compilation avec str
+	-arguments dans une initialisation list doivent etre dans le mm ordre que dans la class
+	https://stackoverflow.com/questions/160147/catching-exceptions-from-a-constructors-initializer-list
+	https://stackoverflow.com/questions/17564037/c-constructor-initializer-list-throw-exceptions
+	http://www.gotw.ca/gotw/066.htm
 */
 
 #include "Bureaucrat.hpp"
@@ -40,22 +44,18 @@
 int	main(void)
 {
 	//! INIT
-	Form law;
+	/* 
+		TODO:
+		 il faut voir comment catch try sur linit list de form et faut il avoir _required_execute dans besigned et signform ???
+	*/
+	Form law("Marcel", -1, 150);
 	std::cout << law;
 	std::cout << UMAG<< law.get_name()
 			<< " " << law.get_sign()
 			<< " " << law.get_required_sign()
 			<< " " << law.get_required_execute() << CRESET << std::endl;
-	//Bureaucrat mayor("Charles", -1);
-	//Bureaucrat mayor_2("Jacques", 151);
+	
 	////! INCREMENT DECREMENT
-	//Bureaucrat mayor_3("Pierre", 1);
-	//Bureaucrat mayor_4("Jean-Michel", 150);
-	//mayor_4.decrementGrade();
-	//mayor_3.incrementGrade();
-	//std::cout << "Name: " << mayor_3.getName() << std::endl;
-	//std::cout << "Grade: " << mayor_3.getGrade() << std::endl;
-	//std::cout << "Name: " << mayor_4.getName() << std::endl;
-	//std::cout << "Grade: " << mayor_4.getGrade() << std::endl;
+
 	return (0);
 }
