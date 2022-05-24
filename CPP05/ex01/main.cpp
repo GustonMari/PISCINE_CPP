@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:13:58 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/24 15:37:10 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/24 16:20:37 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,28 +29,33 @@
 	https://stackoverflow.com/questions/1669514/should-i-inherit-from-stdexception
 	https://stackoverflow.com/questions/6755991/catching-stdexception-by-reference
 	https://stackoverflow.com/questions/5230463/what-does-this-function-declaration-mean-in-c
-	https://docs.microsoft.com/fr-fr/cpp/standard-library/overloading-the-output-operator-for-your-own-classes?view=msvc-170
-	on doit declarer dans la class friend pour loperateur << 
-	pour quil puisse acceder au variable et quil puisse avoir deux operateur
-	par contre lors de la declaration onne doit pas avoir Bureaucrat::operator<<
-	https://stackoverflow.com/questions/10744787/operator-must-take-exactly-one-argument
+	dansle getter il ne faut pas retourner const int  car cela cree une erreur e compilation
+	mais ne cree pas derreur de compilation avec str
 */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+#include "colors.h"
 
 int	main(void)
 {
 	//! INIT
-	Bureaucrat mayor("Charles", -1);
-	std::cout << mayor;
-	Bureaucrat mayor_2("Jacques", 151);
+	Form law;
+	std::cout << law;
+	std::cout << UMAG<< law.get_name()
+			<< " " << law.get_sign()
+			<< " " << law.get_required_sign()
+			<< " " << law.get_required_execute() << CRESET << std::endl;
+	//Bureaucrat mayor("Charles", -1);
+	//Bureaucrat mayor_2("Jacques", 151);
 	////! INCREMENT DECREMENT
-	Bureaucrat mayor_3("Pierre", 1);
-	Bureaucrat mayor_4("Jean-Michel", 150);
-	mayor_4.decrementGrade();
-	mayor_3.incrementGrade();
-	std::cout << "Name: " << mayor_3.getName() << std::endl;
-	std::cout << "Grade: " << mayor_3.getGrade() << std::endl;
-	std::cout << mayor_4;
+	//Bureaucrat mayor_3("Pierre", 1);
+	//Bureaucrat mayor_4("Jean-Michel", 150);
+	//mayor_4.decrementGrade();
+	//mayor_3.incrementGrade();
+	//std::cout << "Name: " << mayor_3.getName() << std::endl;
+	//std::cout << "Grade: " << mayor_3.getGrade() << std::endl;
+	//std::cout << "Name: " << mayor_4.getName() << std::endl;
+	//std::cout << "Grade: " << mayor_4.getGrade() << std::endl;
 	return (0);
 }

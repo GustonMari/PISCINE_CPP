@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 21:40:28 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/23 15:08:54 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/24 14:52:24 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,12 @@ void	PhoneBook::search_contact()
 	}
 	std::cout << "wich contact do you want?" << std::endl;
 	std::getline(std::cin , str);
-	if (str.empty())
+	if (str.length() != 1 || std::isdigit(str.c_str()[0]) == 0)
+	{
+		std::cout << BRED "Bad number of index" CRESET << std::endl;
+		return ;
+	}
+	if (std::cin.eof())
 	{
 		std::cout << BRED "\nEXIT ctrl D used"  CRESET << std::endl;
 		exit(0);
@@ -103,7 +108,7 @@ std::string get_contact_string(void)
 	std::string	str;
 
 	std::getline(std::cin, str);
-	if (str.empty())
+	if (std::cin.eof())
 	{
 		std::cout << BRED "\nEXIT ctrl D used"  CRESET << std::endl;
 		exit(0);
