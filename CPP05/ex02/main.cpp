@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:13:58 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/25 10:33:41 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/25 14:09:46 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,30 +40,20 @@
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+// #include "RobotomyRequestForm.hpp"
+// #include "PresidentialPardonForm.hpp"
 
+//TODO	passer en abstract form
+//TODO DOIT ON CREE larbre et le fichier dans le constructeur ou avec function separer
 int	main(void)
 {
 	try
 	{
-		//! INIT
-		//Form law("Police enforcement", -1, 150);
-		////! beSign Form to low
-		//Bureaucrat employee("Waiter", 15);
-		//Form law_2("Police enforcement", 10, 150);
-		//std::cout << law_2;
-		//law_2.beSigned(employee);
-		//std::cout << law_2;
-		////! beSign Form OK
-		//Bureaucrat employee("Marshall", 10);
-		//Form law_2("Police enforcement", 10, 150);
-		//std::cout << law_2;
-		//law_2.beSigned(employee);
-		//std::cout << law_2;
-		////! Sign Form OK
-		Bureaucrat chief("Marshall", 10);
-		Form law_2("Police enforcement", 10, 150);
-		law_2.beSigned(chief);
-		law_2.signForm(chief);
+		//! CREATE TREES
+		ShrubberyCreationForm trees("trees");
+		trees.createAsciiTrees();
+		
 	}
 	catch(const std::exception & e)
 	{
