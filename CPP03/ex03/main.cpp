@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:34:45 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/28 10:41:54 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/25 16:11:16 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@
 	ATTENTION QUAND ON UTILISE using AVEC UNE AUTRE FONCTION ON DOT PAS AVOIR LES PARENTHESE!!!
 	https://www.learncpp.com/cpp-tutorial/variable-shadowing-name-hiding/#:~:text=So%20what%20happens%20when%20we,called%20name%20hiding%20or%20shadowing.
 */
-
 
 int main()
 {

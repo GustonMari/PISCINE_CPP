@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:13:58 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/25 14:09:46 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/25 18:20:25 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,28 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
-// #include "RobotomyRequestForm.hpp"
+#include "RobotomyRequestForm.hpp"
 // #include "PresidentialPardonForm.hpp"
 
 //TODO	passer en abstract form
-//TODO DOIT ON CREE larbre et le fichier dans le constructeur ou avec function separer
+//TODO comment faire le check si le form est sign ou pas dans execute ??
+
 int	main(void)
 {
 	try
 	{
-		//! CREATE TREES
-		ShrubberyCreationForm trees("trees");
-		trees.createAsciiTrees();
-		
+		//! CREATE TREES (145, 137)
+		//Bureaucrat mayor("Mayor", 140);
+		//ShrubberyCreationForm trees("trees");
+		//trees.Form::beSigned(mayor);
+		//std::cout << BGRN "OK" CRESET << std::endl;
+		//trees.execute(mayor);
+		//! CREATE ROBOTOMY REQUEST (72, 45)
+		Bureaucrat mayor("Mayor", 65);
+		RobotomyRequestForm android("R2R");
+		android.Form::beSigned(mayor);
+		std::cout << BGRN "OK" CRESET << std::endl;
+		android.execute(mayor);
 	}
 	catch(const std::exception & e)
 	{

@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 10:35:26 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/25 14:06:54 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/25 16:45:47 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,11 @@ class ShrubberyCreationForm : public Form
 		
 		ShrubberyCreationForm	& operator=(const ShrubberyCreationForm & src);
 		
-		void createAsciiTrees(void);
 		void					execute(Bureaucrat const & executor) const;
 	private:
-		std::string				_target;
-		int						_signGrade;
-		int						_execGrade;
+		//std::string				_target;
+		//int						_signGrade;
+		//int						_execGrade;
 		
 };
 

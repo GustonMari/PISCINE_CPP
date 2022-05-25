@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:49:52 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/25 10:30:56 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/25 18:24:19 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,3 +126,16 @@ const char	 * Form::GradeTooLowException::what() const throw()
 {
 	return ("\e[1;33mThe Grade is too low\e[0m");
 }
+
+/*
+	! NotSignedException
+*/
+
+const char	 * Form::NotSignedException::what() const throw()
+{
+	return ("\e[1;33mNot sign Form\e[0m");
+}
+
+/*
+	srand(time(NULL));
+*/

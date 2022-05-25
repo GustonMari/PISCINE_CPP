@@ -6,51 +6,52 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 10:36:16 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/25 14:06:36 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/25 16:53:33 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
 //!------------------------------CONSTRUCTOR----------------------------------
-ShrubberyCreationForm::ShrubberyCreationForm()
+
+ShrubberyCreationForm::ShrubberyCreationForm(): Form("NO NAME", 145, 137)
 {
-	//this->_name = "ShrubberyCreationForm";
-	this->_target = "";
-	this->_signGrade = 145;
-	this->_execGrade = 137;
+
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): Form(target, 145, 137)
 {
-	//this->_name = name;
-	this->_target = target;
-	this->_signGrade = 145;
-	this->_execGrade = 137;
+
 }
 
 //ShrubberyCreationForm(const ShrubberyCreationForm & src);
 		
 //!------------------------------DESTRUCTOR-----------------------------------
+
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 	
 }
+
 //!------------------------------OPERATOR-------------------------------------
+
 ShrubberyCreationForm	& ShrubberyCreationForm::operator=(const ShrubberyCreationForm & src)
 {
-	this->_target = src._target;
-	this->_signGrade = src._signGrade;
-	this->_execGrade = src._execGrade;
+	this->Form::operator=(src);
 	return (*this);
 }
+
 //!------------------------------FUNCTION-------------------------------------
 
-void	ShrubberyCreationForm::createAsciiTrees(void)
+void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
+	//TODO faire le check pour savoir si le form est sign ou pas
+	if (this->Form::get_sign() == false)
+		throw Form::NotSignedException();
+	if (executor.getGrade() > this->Form::get_required_execute())
+		throw Form::GradeTooLowException();
 	std::string new_string;
-	
-	new_string.assign(_target);
+	new_string.assign(Form::get_name());
 	new_string.append("_shrubbery");
 	std::ofstream file(new_string.c_str());
 	file << "   x\n  xxx\n xxxxx\n   I" << std::endl;
