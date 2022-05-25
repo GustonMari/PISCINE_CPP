@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:47:30 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/24 15:36:22 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/25 09:51:25 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,49 +19,26 @@
 Bureaucrat::Bureaucrat(): _name("NO NAME")
 {
 	std::cout << UGRN "Bureaucrat was constructed" CRESET << std::endl;
-	try
-	{
-		this->_grade = 150;
-		if (_grade < 1)
-			throw Bureaucrat::GradeTooHighException();
-		if (_grade > 150)
-			throw Bureaucrat::GradeTooLowException();
-	}
-	catch(GradeTooHighException & e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	catch(GradeTooLowException & e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	this->_grade = 150;
+	if (_grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	if (_grade > 150)
+		throw Bureaucrat::GradeTooLowException();
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
 {
-	try
+	this->_grade = grade;
+	if (_grade < 1)
 	{
-		this->_grade = grade;
-		if (_grade < 1)
-		{
-			_grade = 1;
-			throw Bureaucrat::GradeTooHighException();
-		}
-			
-		if (_grade > 150)
-		{
-			_grade = 150;
-			throw Bureaucrat::GradeTooLowException();
-		}
-			
+		_grade = 1;
+		throw Bureaucrat::GradeTooHighException();
 	}
-	catch(GradeTooHighException & e)
+		
+	if (_grade > 150)
 	{
-		std::cerr << e.what() << '\n';
-	}
-	catch(GradeTooLowException & e)
-	{
-		std::cerr << e.what() << '\n';
+		_grade = 150;
+		throw Bureaucrat::GradeTooLowException();
 	}
 	std::cout << UGRN "Bureaucrat "<< _name <<" grade " << _grade << " was constructed"  CRESET << std::endl;
 }
@@ -110,36 +87,21 @@ int	Bureaucrat::getGrade(void) const
 
 void	Bureaucrat::incrementGrade(void)
 {
-	try
+	_grade--;
+	if (_grade < 1 || _grade > 150)
 	{
-		_grade--;
-		if (_grade < 1 || _grade > 150)
-		{
-			_grade = 1;
-			throw Bureaucrat::GradeTooHighException();
-		}
-	}
-	catch(GradeTooHighException & e)
-	{
-		std::cerr << e.what() << std::endl;
+		_grade = 1;
+		throw Bureaucrat::GradeTooHighException();
 	}
 }
 
 void	Bureaucrat::decrementGrade(void)
 {
-
-		try
+	_grade++;
+	if (_grade < 1 || _grade > 150)
 	{
-		_grade++;
-		if (_grade < 1 || _grade > 150)
-		{
-			_grade = 150;
-			throw Bureaucrat::GradeTooLowException();
-		}
-	}
-	catch(GradeTooLowException & e)
-	{
-		std::cerr << e.what() << std::endl;
+		_grade = 150;
+		throw Bureaucrat::GradeTooLowException();
 	}
 }
 
