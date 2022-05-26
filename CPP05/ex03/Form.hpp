@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:37:38 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/26 13:12:56 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/26 16:15:23 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Form
 		Form(const Form & src);
 		friend std::ostream & operator<<(std::ostream & os, const Form & src);
 		Form &operator=(const Form & src);
-		~Form();
+		virtual ~Form();
 		
 		const std::string	get_name(void) const;
 		bool				get_sign(void) const;

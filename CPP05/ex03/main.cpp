@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:13:58 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/26 13:19:45 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/26 16:15:59 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 	Dans l'exemple ci-dessus, what() est une méthode publique 
 	fournie par la classe d'exception. 
 	Elle est utilisée pour renvoyer la cause d'une exception.
+	
+	lors de la decla on a une nested class
+	const char * Intern::FormNotFoundException::what() const throw()
 	
 	catch (...) permet de capturer toutes les exceptions
 	_name etant const on peut que la changer lors de linitialisation
@@ -54,40 +57,19 @@ int	main(void)
 {
 	try
 	{
-		//! CREATE TREES (145, 137)
-		//std::cout << "---------------------------------------------------------------------" << std::endl;
-		//Bureaucrat mayor("Mayor", 140);
-		//ShrubberyCreationForm trees("trees");
-		//trees.Form::beSigned(mayor);
-		//std::cout << BGRN "OK" CRESET << std::endl;
-		//trees.execute(mayor);
-		////! CREATE ROBOTOMY REQUEST FAIL (72, 45)
-		//std::cout << "---------------------------------------------------------------------" << std::endl;
-		//Bureaucrat mayor_2("Jacques", 65);
-		//RobotomyRequestForm android("TERMINATOR");
-		//android.Form::beSigned(mayor_2);
-		//std::cout << BGRN "OK" CRESET << std::endl;
-		//android.execute(mayor_2);
-		//! CREATE ROBOTOMY REQUEST SUCCEED (72, 45)
-		//std::cout << "---------------------------------------------------------------------" << std::endl;
-		//Bureaucrat mayor_3("Mayor", 1);
-		//RobotomyRequestForm android_2("R2R");
-		//android_2.Form::beSigned(mayor_3);
-		//std::cout << BGRN "OK" CRESET << std::endl;
-		//android_2.execute(mayor_3);
-		////! CREATE PRESIDENTIAL PARDON (25, 5)
-		//std::cout << "---------------------------------------------------------------------" << std::endl;
-		//Bureaucrat president("President", 1);
-		//PresidentialPardonForm pardon("Pardon");
-		//pardon.Form::beSigned(president);
-		//std::cout << BGRN "OK" CRESET << std::endl;
-		//pardon.execute(president);
-		//! BUREAUCRAT EXECUTE FORM 
-		std::cout << "---------------------------------------------------------------------" << std::endl;
-		Bureaucrat	senator("Michel", 145);
-		ShrubberyCreationForm law("Pineapple trees");
-		law.Form::beSigned(senator);
-		senator.executeForm(law);
+		//! error form not found
+		
+		//Intern pizza_guy;
+		//Form * form1 = pizza_guy.makeForm("shrubberyyy request", "Bob");
+		//(void)form1;
+		//delete  form1;
+		//! intern create and bureaucreate execute
+		Bureaucrat pdg("Elias", 1);
+		Intern coffee_guy;
+		Form * form2 = coffee_guy.makeForm("robotomy request", "Android");
+		form2->beSigned(pdg);
+		pdg.executeForm(*form2);
+		delete form2;
 	}
 	catch(const std::exception & e)
 	{

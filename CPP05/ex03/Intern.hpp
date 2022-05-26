@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 13:21:50 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/26 14:18:36 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/26 15:35:57 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 # define INTERN_HPP
 # include <string>
 # include <iostream>
+# include "colors.h"
 # include "Form.hpp"
+# include "Bureaucrat.hpp"
+# include "RobotomyRequestForm.hpp"
+# include "ShrubberyCreationForm.hpp"
+# include "PresidentialPardonForm.hpp"
 
 class Intern
 {
@@ -23,7 +28,10 @@ class Intern
 		Intern(Intern const & src);
 		~Intern();
 		Intern & operator=(Intern const & rhs);
-		Form * makeForm(std::string name, std::string target) const;
+		Form * makeShrubbery(std::string target);
+		Form * makeRobotomyRequest(std::string target);
+		Form * makePresidentialPardon(std::string target);
+		Form * makeForm(std::string name, std::string target);
 		class FormNotFoundException : public std::exception
 		{
 			public:
