@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:49:52 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/26 14:16:04 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/26 17:54:18 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,13 @@ Form::~Form()
 Form	& Form::operator=(const Form & src)
 {
 	std::string* string_ptr = const_cast<std::string*>(&this->_name);
-	*string_ptr = src._name;
-	this->_sign = src._sign;
 	int *int_ptr = const_cast<int*>(&this->_required_sign);
-	*int_ptr = src._required_sign;
 	int *int_ptr2 = const_cast<int*>(&this->_required_execute);
+
+	*string_ptr = src._name;
+	*int_ptr = src._required_sign;
 	*int_ptr2 = src._required_execute;
+	this->_sign = src._sign;
 	return (*this);
 }
 
@@ -134,14 +135,10 @@ const char	 * Form::GradeTooLowException::what() const throw()
 }
 
 /*
-	! NotSignedException
+	! NotSignedpException
 */
 
 const char	 * Form::NotSignedException::what() const throw()
 {
 	return ("\e[1;33mNot sign Form\e[0m");
 }
-
-/*
-	srand(time(NULL));
-*/
