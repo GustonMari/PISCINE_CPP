@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:13:58 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/26 11:34:47 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/26 13:14:15 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@
 	(rand() % 100) < 75;
 */
 
-#include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
@@ -71,19 +71,25 @@ int	main(void)
 		//std::cout << BGRN "OK" CRESET << std::endl;
 		//android.execute(mayor_2);
 		//! CREATE ROBOTOMY REQUEST SUCCEED (72, 45)
+		//std::cout << "---------------------------------------------------------------------" << std::endl;
+		//Bureaucrat mayor_3("Mayor", 1);
+		//RobotomyRequestForm android_2("R2R");
+		//android_2.Form::beSigned(mayor_3);
+		//std::cout << BGRN "OK" CRESET << std::endl;
+		//android_2.execute(mayor_3);
+		////! CREATE PRESIDENTIAL PARDON (25, 5)
+		//std::cout << "---------------------------------------------------------------------" << std::endl;
+		//Bureaucrat president("President", 1);
+		//PresidentialPardonForm pardon("Pardon");
+		//pardon.Form::beSigned(president);
+		//std::cout << BGRN "OK" CRESET << std::endl;
+		//pardon.execute(president);
+		//! BUREAUCRAT EXECUTE FORM 
 		std::cout << "---------------------------------------------------------------------" << std::endl;
-		Bureaucrat mayor_3("Mayor", 1);
-		RobotomyRequestForm android_2("R2R");
-		android_2.Form::beSigned(mayor_3);
-		std::cout << BGRN "OK" CRESET << std::endl;
-		android_2.execute(mayor_3);
-		//! CREATE PRESIDENTIAL PARDON (25, 5)
-		std::cout << "---------------------------------------------------------------------" << std::endl;
-		Bureaucrat president("President", 1);
-		PresidentialPardonForm pardon("Pardon");
-		pardon.Form::beSigned(president);
-		std::cout << BGRN "OK" CRESET << std::endl;
-		pardon.execute(president);
+		Bureaucrat	senator("Michel", 145);
+		ShrubberyCreationForm law("Pineapple trees");
+		law.Form::beSigned(senator);
+		senator.executeForm(law);
 	}
 	catch(const std::exception & e)
 	{

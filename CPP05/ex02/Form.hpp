@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:37:38 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/25 14:58:21 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/26 13:12:56 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <iostream>
 # include <string>
 # include "colors.h"
+
+class Bureaucrat;
 
 class Form
 {

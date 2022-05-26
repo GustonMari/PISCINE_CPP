@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:47:30 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/25 09:51:25 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/26 13:06:42 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,11 @@ void	Bureaucrat::decrementGrade(void)
 	}
 }
 
+void	Bureaucrat::executeForm(Form const & form) const
+{
+	form.execute(*this);
+	std::cout << "Bureaucrat " << _name << " executes form " << form.get_name() << std::endl;
+}
 /*
 	! GradeTooHighException
 */

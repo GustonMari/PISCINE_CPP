@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:14:47 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/24 15:07:35 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/26 13:13:12 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <exception>
 # include <string>
 # include "colors.h"
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -30,6 +33,7 @@ class Bureaucrat
 		int getGrade() const;
 		void incrementGrade();
 		void decrementGrade();
+		void executeForm(Form const & form) const;
 	class GradeTooHighException : public std::exception
 	{
 		public:
