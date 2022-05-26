@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:01:00 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/25 17:19:08 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/26 10:14:20 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ROBOTOMYREQUESTFORM_HPP
 # include <iostream>
 # include <string>
+# include <stdlib.h>
 # include "Form.hpp"
 
 class RobotomyRequestForm : public Form

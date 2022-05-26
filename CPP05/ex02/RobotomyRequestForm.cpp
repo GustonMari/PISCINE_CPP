@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:03:36 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/25 18:23:20 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/26 10:32:26 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,17 @@ RobotomyRequestForm	& RobotomyRequestForm::operator=(const RobotomyRequestForm &
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
+	//BUG check si le target est bien le nom du form ou pas 
 	if (Form::get_sign() == false)
 		throw Form::NotSignedException();
 	if (executor.getGrade() > this->Form::get_required_execute())
 		throw RobotomyRequestForm::NotPossibleToExecute();
 	std::cout << "BZEEEEETZEETTT (Make some drilling noises)" << std::endl;
-	//if (executor.get_grade() < this->_signGrade)
-	//TODO FINIR FONCTION random
+	srand(time(NULL));
+	if (rand() % 100 < 50)
+		std::cout << BGRN << Form::get_name() <<" has been robotomized successfully" CRESET << std::endl;
+	else
+		std::cout << BRED << Form::get_name() << " the robotomy failed" CRESET << std::endl;
 }
 
 //!------------------------------FUNCTION-------------------------------------

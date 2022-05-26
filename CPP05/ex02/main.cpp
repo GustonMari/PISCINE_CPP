@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:13:58 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/25 18:20:25 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/26 11:34:47 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,18 @@
 	https://stackoverflow.com/questions/10744787/operator-must-take-exactly-one-argument
 	catch(Form::GradeTooLowException & e) permet de catch une exeception particuliere
 	catch(const std::exception & e) permet de chopper tte les exception comme (...)
+	La fonction srand permet d'initialiser le générateur de nombres aléatoires
+	(la fonction rand) fournit par la librairie C standard.
+	The rand() % 100 will give you a random number between 0 and 100,
+	and the probability of it being under 75 is, well, 75%. You can substitute the 75 for any probability you wan
+	(rand() % 100) < 75;
 */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
-// #include "PresidentialPardonForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 //TODO	passer en abstract form
 //TODO comment faire le check si le form est sign ou pas dans execute ??
@@ -52,17 +57,33 @@ int	main(void)
 	try
 	{
 		//! CREATE TREES (145, 137)
+		//std::cout << "---------------------------------------------------------------------" << std::endl;
 		//Bureaucrat mayor("Mayor", 140);
 		//ShrubberyCreationForm trees("trees");
 		//trees.Form::beSigned(mayor);
 		//std::cout << BGRN "OK" CRESET << std::endl;
 		//trees.execute(mayor);
-		//! CREATE ROBOTOMY REQUEST (72, 45)
-		Bureaucrat mayor("Mayor", 65);
-		RobotomyRequestForm android("R2R");
-		android.Form::beSigned(mayor);
+		////! CREATE ROBOTOMY REQUEST FAIL (72, 45)
+		//std::cout << "---------------------------------------------------------------------" << std::endl;
+		//Bureaucrat mayor_2("Jacques", 65);
+		//RobotomyRequestForm android("TERMINATOR");
+		//android.Form::beSigned(mayor_2);
+		//std::cout << BGRN "OK" CRESET << std::endl;
+		//android.execute(mayor_2);
+		//! CREATE ROBOTOMY REQUEST SUCCEED (72, 45)
+		std::cout << "---------------------------------------------------------------------" << std::endl;
+		Bureaucrat mayor_3("Mayor", 1);
+		RobotomyRequestForm android_2("R2R");
+		android_2.Form::beSigned(mayor_3);
 		std::cout << BGRN "OK" CRESET << std::endl;
-		android.execute(mayor);
+		android_2.execute(mayor_3);
+		//! CREATE PRESIDENTIAL PARDON (25, 5)
+		std::cout << "---------------------------------------------------------------------" << std::endl;
+		Bureaucrat president("President", 1);
+		PresidentialPardonForm pardon("Pardon");
+		pardon.Form::beSigned(president);
+		std::cout << BGRN "OK" CRESET << std::endl;
+		pardon.execute(president);
 	}
 	catch(const std::exception & e)
 	{

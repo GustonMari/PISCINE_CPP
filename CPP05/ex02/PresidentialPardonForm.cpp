@@ -1,41 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 10:36:16 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/26 10:32:50 by gmary            ###   ########.fr       */
+/*   Created: 2022/05/26 10:37:09 by gmary             #+#    #+#             */
+/*   Updated: 2022/05/26 11:29:05 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 //!------------------------------CONSTRUCTOR----------------------------------
 
-ShrubberyCreationForm::ShrubberyCreationForm(): Form("NO NAME", 145, 137)
+PresidentialPardonForm::PresidentialPardonForm() : Form("NO NAME", 25, 5)
 {
 
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): Form(target, 145, 137)
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form(target, 25, 5)
 {
 
 }
 
-//ShrubberyCreationForm(const ShrubberyCreationForm & src);
-		
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm & src) : Form(src)
+{
+
+}
+
 //!------------------------------DESTRUCTOR-----------------------------------
 
-ShrubberyCreationForm::~ShrubberyCreationForm()
+PresidentialPardonForm::~PresidentialPardonForm()
 {
 	
 }
 
 //!------------------------------OPERATOR-------------------------------------
 
-ShrubberyCreationForm	& ShrubberyCreationForm::operator=(const ShrubberyCreationForm & src)
+PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPardonForm & src)
 {
 	this->Form::operator=(src);
 	return (*this);
@@ -43,18 +46,11 @@ ShrubberyCreationForm	& ShrubberyCreationForm::operator=(const ShrubberyCreation
 
 //!------------------------------FUNCTION-------------------------------------
 
-void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-	//BUG check si le target est bien le nom du form ou pas 
-	//TODO faire le check pour savoir si le form est sign ou pas
-	if (this->Form::get_sign() == false)
+	if (Form::get_sign() == false)
 		throw Form::NotSignedException();
 	if (executor.getGrade() > this->Form::get_required_execute())
 		throw Form::GradeTooLowException();
-	std::string new_string;
-	new_string.assign(Form::get_name());
-	new_string.append("_shrubbery");
-	std::ofstream file(new_string.c_str());
-	file << "   x\n  xxx\n xxxxx\n   I" << std::endl;
-	file.close();
+	std::cout << BMAG << Form::get_name() << " has been pardoned by Zafod Beeblebrox." CRESET << std::endl;
 }
