@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 13:19:48 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/15 11:59:47 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/30 11:01:46 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,13 @@ int Account::_totalNbWithdrawals = 0;
 
 void	Account::_displayTimestamp(void)
 {
-	/*time_t timestamp = time(NULL);
+	time_t timestamp = time(NULL);
 	struct tm *p = localtime(&timestamp);
 	char	buffer[2048];
 
 	strftime(buffer, 2048, "[%d%m%Y_%H%M%S]", p);
-	std::cout << buffer << std::endl;*/
-	std::cout << "[19920104_091532]";
+	std::cout << buffer;
+	//std::cout << "[19920104_091532]";
 }
 
 void	Account::displayAccountsInfos(void)
@@ -106,25 +106,12 @@ bool	Account::makeWithdrawal(int withdrawal)
 	return (true);
 }
 
-// A CHECKER PAS SUR SI CEST OK
 int	Account::checkAmount(void) const
 {
 	if (_totalAmount < 0)
 		return -1;
 	return 0;
 }
-
-/* Account::Account(int initial_deposit)
-{
-	Account::_nbAccounts++;
-	this->_accountIndex = Account::_nbAccounts;
-	this->_amount = initial_deposit;
-	this->_nbDeposits = 0;
-	this->_nbWithdrawals = 0;
-	Account::_totalAmount += initial_deposit;
-	Account::_displayTimestamp();
-	std::cout << "index:" << this->_accountIndex << ";amount:" << this->_amount << ";created" << std::endl;
-} */
 
 int	Account::getNbAccounts(void)
 {

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 19:48:54 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/11 20:46:43 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/30 10:26:31 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 
 #include <iostream>
 #include <string>
-#include "colors.h"
 
 int	main(int ac, char **av)
 {
@@ -35,7 +34,7 @@ int	main(int ac, char **av)
 		{
 			j = 0;
 			str.assign(av[i]);
-			while (j < str.length())
+			while ((long unsigned int)j < str.length())
 			{
 				std::cout << (char) std::toupper(str[j]);
 				j++;

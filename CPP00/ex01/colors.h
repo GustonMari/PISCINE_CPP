@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 10:23:56 by gmary             #+#    #+#             */
-/*   Updated: 2022/02/08 10:25:40 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/30 10:43:42 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@
 #define BHWHT "\e[1;97m"
 
 //Reset
-#define reset "\e[0m"
 #define CRESET "\e[0m"
 #define COLOR_RESET "\e[0m"
 
