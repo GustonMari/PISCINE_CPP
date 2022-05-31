@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 14:22:39 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/31 13:41:35 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/31 16:49:08 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,21 @@ void	convert_float(std::string str)
 {
 	float	f;
 
-	f = std::strtod(str.c_str(), NULL);
+	f = std::strtof(str.c_str(), NULL);
+	if (ERANGE == errno)
+	{
+		std::cout << "char: Non displayable\nint: impossible\nfloat: impossible" << std::endl;
+		std::cout << "double: " << std::strtod(str.c_str(), NULL) << ".0" << std::endl;
+		exit (0);
+	}
 	if (!std::isprint(static_cast<char>(f)))
 		std::cout << "char: Non displayable" << std::endl;
 	else
 		std::cout << "char: '" << static_cast<char>(f) << "'" << std::endl;
-	std::cout << "int: " << static_cast<int>(f) << std::endl;
+	if (f >= (float)INT_MIN && f <= (float)INT_MAX)
+		std::cout << "int: " << static_cast<int>(f) << std::endl;
+	else
+		std::cout << "int: impossible" << std::endl;
 	std::cout << "float: " << f << ".0f" << std::endl;
 	std::cout << "double: " << static_cast<double>(f) << ".0" << std::endl;
 }
@@ -83,58 +92,106 @@ void	convert_double(std::string str)
 {
 	double d;
 
+
 	d = std::strtod(str.c_str(), NULL);
 	if (ERANGE == errno)
-		std::cout << "TAILLE TROP GROSSE" << std::endl; //TODO a changer
+	{
+		std::cout << "char: Non displayable\nint: impossible\nfloat: impossible\ndouble: impossible" << std::endl;
+		exit (0);
+	}
 	if (!std::isprint(static_cast<char>(d)))
 		std::cout << "char: Non displayable" << std::endl;
 	else
 		std::cout << "char: '" << static_cast<char>((d)) << "'" << std::endl;
-	std::cout << "int: " << static_cast<int>(d) << std::endl;
-	std::cout << "float: " << static_cast<float>(d) << ".0f" << std::endl;
-	std::cout << "double: " << d << ".0" << std::endl;
+	if (d >= INT_MIN && d <= INT_MAX)
+		std::cout << "int: " << static_cast<int>(d) << std::endl;
+	else
+		std::cout << "int: impossible" << std::endl;
+	if ((d >= -FLT_MAX/*  && d <= -FLT_MIN */) && (/* d >= FLT_MIN &&  */d <= FLT_MAX))
+		std::cout << "float: " << static_cast<float>(d) << ".0f" << std::endl;
+	else
+		std::cout << "float: impossible" << std::endl;
+	if ((d >= -DBL_MAX/*  && d <= -DBL_MIN */) && (/* d >= DBL_MIN &&  */d <= DBL_MAX))
+		std::cout << "double: " << d << ".0" << std::endl;
+	else
+		std::cout << "double: impossible" << std::endl;
 }
 
-/* int	define_type(std::string str)
+void	define_conversion_type(std::string str)
 {
-	for (unsigned int i = 0; i < str.length(); i++)
+	double d;
+	
+	d = std::strtod(str.c_str(), NULL);
+	if (ERANGE == errno)
 	{
-		if ()
-			return (1);
-		if (str[i] == 'f')
-			return (2);
-		if (str[i] == 'c')
-			return (3);
-		if (str[i] == 'd')
-			return (4);
+		std::cout << "char: Non displayable\nint: impossible\nfloat: impossible\ndouble: impossible" << std::endl;
+		exit (0);
 	}
-	return (-1);
-} */
+	if (d >= FLT_MIN && d <= FLT_MAX && str[str.length() - 1] == 'f')
+		convert_float(str);
+	else if (d >= INT_MIN && d <= INT_MAX && (str.find(".") == std::string::npos))
+		convert_integer(str);
+	else
+		convert_double(str);
+	//if (d >= DBL_MIN && d <= DBL_MAX && str.find(".") != std::string::npos)
+}
 
+//TODO: que ce passe til pour +inf et +infff ???
+
+void	convert_particuliar(std::string str)
+{
+	std::cout << "char: Non displayable\nint: impossible" << std::endl;
+	if (str.compare("-inf") == 0)
+		std::cout << "float: -inff\ndouble: -inf" << std::endl;
+	else if (str.compare("+inf") == 0)
+		std::cout << "float: +inff\ndouble: +inf" << std::endl;
+	else if (str.compare("+inff") == 0)
+		std::cout << "float: +inff\ndouble: +inf" << std::endl;
+	else if (str.compare("-inff") == 0)
+		std::cout << "float: -inff\ndouble: -inf" << std::endl;
+	else if (str.compare("nan") == 0)
+		std::cout << "float: nanf\ndouble: nan" << std::endl;
+	else if (str.compare("nanf") == 0)
+		std::cout << "float: nanf\ndouble: nan" << std::endl;
+	else
+		std::cout << "float: impossible\ndouble: impossible" << std::endl;
+}
+
+bool	particuliar_case(std::string str)
+{
+	std::string tab[6] = {"-inff", "-inf", "+inff", "+inf", "nan", "nanf"};
+
+	for (int i = 0; i < 6 ; i++)
+	{
+		if (str.compare(tab[i]) == 0)
+			return (true);
+	}
+	return (false);
+}
+
+// FLT_MAX DBL_MAX
+
+//TODO: comment convert le char en int et surtout doit ton proteger la conversion en char
+//lorsque l'on rentre par exemple  40000
+//TODO: vraiment tout recheck
 int main(int ac, char **av)
 {
 	std::string	str;
-	(void)ac;
+
 	if(ac == 2)
 	{
 		str.assign(av[1]);
-		if (is_a_str(str) == false)
-			std::cout << "THIS IS A STRING" << std::endl;
-			//convert_char(str[0]);
-		else
+		if (str.empty())
 		{
-			if (str.find("f") != std::string::npos && str[str.length() - 1] == 'f')
-				std::cout << "this is a float" << std::endl;
-				//convert_float(str);
-			else if (str.find(".") != std::string::npos)
-				std::cout << "this is a double" << std::endl;
-				//convert_double(str);
-			if (str.find("int") != std::string::npos)
-				std::cout << "this is a integer" << std::endl;
-				//convert_integer(str);
-			else
-				std::cout << "Error: type not found" << std::endl;
+			std::cout << "Nothing to convert" << std::endl;
+			return (0);
 		}
+		if (particuliar_case(str) == true)
+			convert_particuliar(str);
+		else if (is_a_str(str) == false)
+			convert_char(str[0]);
+		else
+			define_conversion_type(str);
 	}
 	return (0);
 }

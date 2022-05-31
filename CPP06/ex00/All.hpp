@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:56:21 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/31 13:41:56 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/31 14:13:28 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <cstdlib>
-#include <limits>
+#include <limits.h>
 #include <errno.h>
+#include <float.h>
 
 bool	is_a_str(std::string str);
 
