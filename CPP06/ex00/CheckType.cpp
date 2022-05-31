@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:17:34 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/31 13:49:15 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/31 17:09:15 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ bool	is_a_str(std::string str)
 		i++;
 	while (i < str.length() - 1)
 	{
-		if (!std::isdigit(str[i]) /* && str[i] != 'f' */ && str[i] != '.')
+		if (!std::isdigit(str[i]) && str[i] != '.')
 			return (false);
 		i++;
 	}

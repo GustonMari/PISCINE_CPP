@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 14:22:39 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/31 16:49:08 by gmary            ###   ########.fr       */
+/*   Updated: 2022/05/31 17:11:00 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,11 +107,11 @@ void	convert_double(std::string str)
 		std::cout << "int: " << static_cast<int>(d) << std::endl;
 	else
 		std::cout << "int: impossible" << std::endl;
-	if ((d >= -FLT_MAX/*  && d <= -FLT_MIN */) && (/* d >= FLT_MIN &&  */d <= FLT_MAX))
+	if ((d >= -FLT_MAX) && (d <= FLT_MAX))
 		std::cout << "float: " << static_cast<float>(d) << ".0f" << std::endl;
 	else
 		std::cout << "float: impossible" << std::endl;
-	if ((d >= -DBL_MAX/*  && d <= -DBL_MIN */) && (/* d >= DBL_MIN &&  */d <= DBL_MAX))
+	if ((d >= -DBL_MAX) && (d <= DBL_MAX))
 		std::cout << "double: " << d << ".0" << std::endl;
 	else
 		std::cout << "double: impossible" << std::endl;
