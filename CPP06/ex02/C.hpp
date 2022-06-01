@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 09:37:45 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/01 10:03:02 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/01 10:46:18 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <iostream>
 # include <string>
 # include <limits.h>
+#include "Base.hpp"
 
 class C: public Base
 {
