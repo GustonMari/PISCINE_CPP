@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/01 11:23:40 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/01 14:32:23 by gmary            ###   ########.fr       */
+/*   Created: 2022/06/01 14:34:24 by gmary             #+#    #+#             */
+/*   Updated: 2022/06/01 16:02:57 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,65 +26,43 @@ https://docs.microsoft.com/fr-fr/cpp/cpp/template-specialization-cpp?view=msvc-1
 https://www.geeksforgeeks.org/templates-cpp/
 https://www.geeksforgeeks.org/template-specialization-c/
 */
+
 # include <iostream>
 # include <string>
 
-template <typename T> void swap(T & s1, T & s2)
+template <typename T, typename S> void	iter(T *tab, S size, void (*f)(T &))
 {
-	T	tmp;
-
-	tmp = s1;
-	s1 = s2;
-	s2 = tmp;
+	for (S i = 0; i < size; i++)
+		f(tab[i]);
 }
 
-template <typename T> T min(T nb1, T nb2)
+template <typename T> void print(T &s)
 {
-	return ((nb1 <= nb2) ? nb1 : nb2);
+	std::cout << s << std::endl;
 }
 
-template <typename T> T max(T nb1, T nb2)
+template <typename T> void square(T &i)
 {
-	return ((nb1 >= nb2) ? nb1 : nb2);
+	i *= i;
 }
 
-int main( void )
+int main()
 {
-	int a = 2;
-	int b = 3;
-	::swap( a, b );
-	std::cout << "a = " << a << ", b = " << b << std::endl;
-	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
-	std::string c = "chaine1";
-	std::string d = "chaine2";
-	::swap(c, d);
-	std::cout << "c = " << c << ", d = " << d << std::endl;
-	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+		int		tab[5] = {1, 2, 3, 4, 5};
+		
+		::iter<int, int>(tab, 5, &print);
+	
+	std::cout << "TEST 2------------------------------" << std::endl;
+	
+		double	tab2[5] = {1, 2, 3, 4, 5};
+		
+		::iter<double, int>(tab2, 5, &square);
+		::iter<double, int>(tab2, 5, &print);
+	
+	std::cout << "TEST 3------------------------------" << std::endl;
+	
+		std::string str[2] = {"hello toi", "la forme chacal"};
+		
+		::iter<std::string, int>(str, 2, &print);
 	return 0;
 }
-
-/* int main()
-{
-	int	nb1 = 2;
-	int	nb2 = 10;
-	swap<int>(nb1, nb2);
-	std::cout << "nb1= " << nb1 << ", nb2= " << nb2 << std::endl;
-
-	double	num1 = 4.15;
-	double	num2 = 4.11;
-	std::cout << "min= " << min<double>(num1, num2) << std::endl;
-
-	float	numb1 = 3000.15;
-	float	numb2 = 245.11;
-	std::cout << "min= " << max<float>(numb1, numb2) << std::endl;
-
-	std::string	str1 = "salut ca va";
-	std::string str2 = "Hola que tal ?";
-
-	::swap<std::string>(str1, str2);
-	std::cout << "str1= " << str1 << std::endl;
-	std::cout << "str2= " << str2 << std::endl;
-	return 0;
-} */
