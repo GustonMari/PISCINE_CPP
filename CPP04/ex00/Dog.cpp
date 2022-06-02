@@ -22,11 +22,11 @@ Dog::Dog()
 	std::cout << "Dog was constructed" << std::endl;
 }
 
-Dog::Dog(std::string name)
+/* Dog::Dog(std::string name)
 {
 	this->type = name;
 	std::cout << "Dog " << type << "was constructed" << std::endl;
-}
+} */
 
 Dog::Dog(const Dog & src): Animal(src)
 {
@@ -43,8 +43,10 @@ Dog::~Dog()
 --------------------OPERATOR----------------------------------------
 */
 
+
 Dog	& Dog::operator=(const Dog &src)
 {
+	this->Animal::type = src.Animal::type;
 	this->type = src.type;
 	return (*this);
 }

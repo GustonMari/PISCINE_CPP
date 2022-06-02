@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:44:42 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/18 14:25:55 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/02 18:43:15 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,10 @@ In practice, when you mark a virtual function as pure (=0), there is very little
  because it will never be called unless someone explicitly does so via Base::Function(...) or if the Base class constructor calls the virtual function in question
 
 	TO DO : passer par une fonction virtuel pour recuperer le brain de animals contenue dans cat et dog
+	https://www.linkedin.com/pulse/why-do-we-need-virtual-destructors-joydip-kanjilal
 */
 
-//need to do set type, check copy et operator=   ------------------------------------------------------------------------------------
+//TODO: setter pour les attributs de brain
 
 int main()
 {
@@ -74,6 +75,10 @@ int main()
 	Brain	weird_man;
 	weird_man = normal_man;
 	weird_man.show_ideas();
+	Dog	basic;
+	{
+		Dog tmp = basic;
+	}
 	return 0;
 }
 

@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 07:33:54 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/02 17:44:08 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/02 17:46:22 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 DiamondTrap::DiamondTrap(): name(ClapTrap::_name)
 {
-	// ClapTrap::_name = new_name;
 	ClapTrap::_name += "_clap_name";
 	this->hit_point = FragTrap::hit_point;
 	this->energy_point = ScavTrap::energy_point;

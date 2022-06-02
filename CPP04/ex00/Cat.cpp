@@ -22,11 +22,11 @@ Cat::Cat()
 	std::cout << "Cat was constructed" << std::endl;
 }
 
-Cat::Cat(std::string name)
+/* Cat::Cat(std::string name)
 {
 	this->type = name;
 	std::cout << "Cat " << type << "was constructed" << std::endl;
-}
+} */
 
 Cat::Cat(const Cat & src): Animal(src)
 {

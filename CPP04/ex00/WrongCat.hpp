@@ -22,9 +22,9 @@ class	WrongCat: public WrongAnimal
 		WrongCat();
 		WrongCat(std::string name);
 		WrongCat(const WrongCat & src);
-		virtual ~WrongCat();
+		~WrongCat();
 		WrongCat	&operator=(const WrongCat & src);
-		virtual void	makeSound() const;
+		void	makeSound() const;
 	protected:
 		std::string	type;
 };

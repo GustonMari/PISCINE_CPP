@@ -21,9 +21,9 @@ class	WrongAnimal
 		WrongAnimal();
 		WrongAnimal(std::string name);
 		WrongAnimal(const WrongAnimal & src);
-		virtual	~WrongAnimal();
+		~WrongAnimal();
 		WrongAnimal	&operator=(const WrongAnimal & src);
-		virtual void	makeSound() const;
+	 	void	makeSound() const;
 		std::string getType() const;
 	protected:
 		std::string	type;

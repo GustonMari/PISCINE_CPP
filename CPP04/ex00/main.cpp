@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:44:42 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/18 13:31:43 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/02 18:21:08 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@
 	you HAVE TO provide a definition for destructors, even if they are pure virtual.
 */
 
-need to do set type, check copy et operator= voir si lond doit inclure une string en protected dans cat et dog
+//need to do set type, check copy et operator= voir si lond doit inclure une string en protected dans cat et dog
 
 int main()
 {
 	const WrongAnimal* meta = new WrongAnimal();
 	const Animal* j = new Dog();
-	const WrongAnimal* i = new WrongCat();
+	const Animal* i = new Cat();
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
+	i->makeSound(); //will output the wrong cat sound!
 	j->makeSound();
 	meta->makeSound();
 	
@@ -47,9 +47,12 @@ const Animal* j = new Dog();
 const Animal* i = new Cat();
 Cat catounet("catounet");
 Cat copy_cat(catounet);
+Cat equal_cat;
+equal_cat = copy_cat;
 std::cout << j->getType() << " " << std::endl;
 std::cout << i->getType() << " " << std::endl;
 std::cout << copy_cat.getType() << " " << std::endl;
+std::cout << "equal cat:" << equal_cat.getType() << " " << std::endl;
 i->makeSound(); //will output the cat sound!
 j->makeSound();
 meta->makeSound();

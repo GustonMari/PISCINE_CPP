@@ -22,11 +22,11 @@ Cat::Cat(): attribute(new Brain())
 	std::cout << "Cat was constructed" << std::endl;
 }
 
-Cat::Cat(std::string name): attribute(new Brain())
+/* Cat::Cat(std::string name): attribute(new Brain())
 {
 	this->type = name;
 	std::cout << "Cat " << type << "was constructed" << std::endl;
-}
+} */
 
 Cat::Cat(const Cat & src): Animal(src)
 {
@@ -37,7 +37,8 @@ Cat::Cat(const Cat & src): Animal(src)
 
 Cat::~Cat()
 {
-	delete attribute;
+	if (attribute)
+		delete attribute;
 	std::cout << "Cat was destructed" << std::endl;
 }
 

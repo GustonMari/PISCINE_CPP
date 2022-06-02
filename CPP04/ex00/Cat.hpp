@@ -20,13 +20,13 @@ class	Cat: public Animal
 {
 	public:
 		Cat();
-		Cat(std::string name);
+		//Cat(std::string name);
 		Cat(const Cat & src);
 		virtual ~Cat();
 		Cat	&operator=(const Cat & src);
 		virtual void	makeSound() const;
 	protected:
-		std::string	type;
+		//std::string	type;
 };
 
 #endif
