@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 16:23:24 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/02 10:47:07 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/02 11:15:40 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int main()
 			testuu = testoo;
 			std::cout << testii[3] << std::endl;
 			std::cout << testuu[3] << std::endl;
-		
 		//!size test
 		
 			std::cout << "size= "<< testuu.size() << std::endl;
@@ -62,7 +61,7 @@ int main()
 			Array<std::string> test3(tab2, 2);
 			Array<std::string> test4(test3);
 			std::cout << test2[1] << std::endl;
-			std::cout << test4[1] << std::endl;			
+			std::cout << test4[1] << std::endl;
 		
 		//! error std::exception
 		

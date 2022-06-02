@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 16:05:19 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/02 10:38:57 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/02 11:13:31 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,8 @@ template <typename T> Array<T>::~Array()
 template <typename T> 
 Array<T>	&	Array<T>::operator=(const Array<T> & src)
 {
+	if (this == &src)
+		return *this;
 	if (this->tab)
 		delete [] this->tab;
 	this->_size= src._size;

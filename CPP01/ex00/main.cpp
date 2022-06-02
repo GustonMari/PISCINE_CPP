@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 10:49:33 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/18 10:39:05 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/02 13:15:35 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Zombie::Zombie(std::string name): _name(name);
 int	main(void)
 {
 	std::string	str;
-	Zombie* new_Zombie = NULL; // = Zombie::newZombie("Gustave");;
+	Zombie* new_Zombie = NULL;
 
 	str.assign("Gustave");
 	new_Zombie = Zombie::newZombie(str);
