@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:59:24 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/20 11:39:14 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/02 16:05:38 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,29 @@ void	Harl::complain(std::string level)
 	i = 0;
 	do
 	{
-		if (level.compare(str[i]) == 0)
-		{
-			while (i < 4)
-			{
-				std::cout << "[ " << str[i] << " ]" << std::endl;
-				(this->*f[i])();
-				std::cout << std::endl;
-				i++;
-			}
-			return ;
-		}
+		if(level.compare(str[i]) == 0)
+			break ;
 		i++;
 	} while (i < 4);
+	switch (i)
+	{
+		case 0:
+			std::cout << "[ " << str[0] << " ]" << std::endl;
+			(this->*f[0])();
+			std::cout << std::endl;
+		case 1:
+			std::cout << "[ " << str[1] << " ]" << std::endl;
+			(this->*f[1])();
+			std::cout << std::endl;
+		case 2:
+			std::cout << "[ " << str[2] << " ]" << std::endl;
+			(this->*f[2])();
+			std::cout << std::endl;
+		case 3:
+			std::cout << "[ " << str[3] << " ]" << std::endl;
+			(this->*f[3])();
+			std::cout << std::endl;
+	}
 	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }
 

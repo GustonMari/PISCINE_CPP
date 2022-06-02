@@ -5,7 +5,7 @@ SRC = main.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 DEPS = $(SRC:.cpp=.d)
-NAME= ex06
+NAME= harlFilter
 
 all: server
 	@echo "\\n\033[32;1mMAKE ALL OK \033[0m \\n"
