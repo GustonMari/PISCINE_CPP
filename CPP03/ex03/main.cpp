@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:34:45 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/25 16:11:16 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/02 17:38:19 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,9 @@ int main()
 	DiamondTrap	diamondtrap3(diamondtrap2);
 	diamondtrap3.whoAmI();
 	std::cout << "\n---------------EQUAL-----------------------" << std::endl;
-	//diamondtrap = diamondtrap2;
-	//diamondtrap.whoAmI();
+	DiamondTrap	diamondtrap4;
+	diamondtrap4 = diamondtrap2;
+	diamondtrap4.whoAmI();
 	std::cout << "\n--------------------------------------" << std::endl;
 	return (0);
 }
