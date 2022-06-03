@@ -48,9 +48,14 @@ Cat::~Cat()
 
 Cat	& Cat::operator=(const Cat &src)
 {
-	this->Animal::type = src.Animal::type;
-	this->attribute = src.attribute;
-	this->type = src.type;
+	if (this != &src)
+	{
+		this->Animal::type = src.Animal::type;
+		delete (this->attribute);
+		this->attribute = new Brain();
+		for (int i = 0; i < 100; i++)
+			this->attribute->set_ideas(i, src.attribute->get_ideas(i));
+	}
 	return (*this);
 }
 

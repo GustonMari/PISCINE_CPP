@@ -22,11 +22,11 @@ Cat::Cat(): attribute(new Brain())
 	std::cout << "Cat was constructed" << std::endl;
 }
 
-Cat::Cat(std::string name): attribute(new Brain())
+/* Cat::Cat(std::string name): attribute(new Brain())
 {
 	this->type = name;
 	std::cout << "Cat " << type << "was constructed" << std::endl;
-}
+} */
 
 Cat::Cat(const Cat & src): AAnimal(src)
 {
@@ -37,7 +37,8 @@ Cat::Cat(const Cat & src): AAnimal(src)
 
 Cat::~Cat()
 {
-	delete attribute;
+	if (attribute)
+		delete attribute;
 	std::cout << "Cat was destructed" << std::endl;
 }
 
@@ -47,9 +48,14 @@ Cat::~Cat()
 
 Cat	& Cat::operator=(const Cat &src)
 {
-	this->AAnimal::type = src.AAnimal::type;
-	this->attribute = src.attribute;
-	this->type = src.type;
+	if (this != &src)
+	{
+		this->AAnimal::type = src.AAnimal::type;
+		delete (this->attribute);
+		this->attribute = new Brain();
+		for (int i = 0; i < 100; i++)
+			this->attribute->set_ideas(i, src.attribute->get_ideas(i));
+	}
 	return (*this);
 }
 

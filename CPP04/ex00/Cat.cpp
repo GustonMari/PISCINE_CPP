@@ -46,7 +46,7 @@ Cat::~Cat()
 Cat	& Cat::operator=(const Cat &src)
 {
 	this->Animal::type = src.Animal::type;
-	this->type = src.type;
+	//this->type = src.type;
 	return (*this);
 }
 

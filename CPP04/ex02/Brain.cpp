@@ -62,3 +62,11 @@ void	Brain::set_ideas(int index, std::string thought)
 	else
 		std::cout << "I've too many thought" << std::endl;
 }
+
+std::string	Brain::get_ideas(int index)
+{
+	if (index >= 0 && index < 100)
+		return (ideas[index]);
+	else
+		return ("Wrong index");
+}

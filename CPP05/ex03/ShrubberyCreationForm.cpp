@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 10:36:16 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/26 10:32:50 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/03 10:23:14 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ ShrubberyCreationForm	& ShrubberyCreationForm::operator=(const ShrubberyCreation
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	//BUG check si le target est bien le nom du form ou pas 
-	//TODO faire le check pour savoir si le form est sign ou pas
 	if (this->Form::get_sign() == false)
 		throw Form::NotSignedException();
 	if (executor.getGrade() > this->Form::get_required_execute())

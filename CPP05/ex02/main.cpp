@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:13:58 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/26 13:19:35 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/03 10:15:15 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@
 	The rand() % 100 will give you a random number between 0 and 100,
 	and the probability of it being under 75 is, well, 75%. You can substitute the 75 for any probability you wan
 	(rand() % 100) < 75;
+	
+	BUG check si le target est bien le nom du form ou pas 
+
 */
 
 #include "Form.hpp"

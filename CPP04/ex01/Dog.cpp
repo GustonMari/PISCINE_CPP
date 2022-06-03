@@ -48,12 +48,26 @@ Dog::~Dog()
 --------------------OPERATOR----------------------------------------
 */
 
-Dog	& Dog::operator=(const Dog &src)
+//TODO: voir pour ca
+Dog & Dog::operator=(const Dog & src)
+{
+	if (this != &src)
+	{
+		this->Animal::type = src.Animal::type;
+		delete (this->attribute);
+		this->attribute = new Brain();
+		for (int i = 0; i < 100; i++)
+			this->attribute->set_ideas(i, src.attribute->get_ideas(i));
+	}
+	return (*this);
+}
+
+/* Dog	& Dog::operator=(const Dog &src)
 {
 	this->Animal::type = src.Animal::type;
 	this->attribute = src.attribute;
 	return (*this);
-}
+} */
 
 /*
 --------------------FUNCTION----------------------------------------

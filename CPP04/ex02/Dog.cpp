@@ -23,12 +23,12 @@ Dog::Dog()
 	std::cout << "Dog was constructed" << std::endl;
 }
 
-Dog::Dog(std::string name)
+/* Dog::Dog(std::string name)
 {
 	this->type = name;
 	attribute = new Brain();
 	std::cout << "Dog " << type << "was constructed" << std::endl;
-}
+} */
 
 Dog::Dog(const Dog & src): AAnimal(src)
 {
@@ -47,10 +47,17 @@ Dog::~Dog()
 --------------------OPERATOR----------------------------------------
 */
 
-Dog	& Dog::operator=(const Dog &src)
+//TODO: voir pour ca
+Dog & Dog::operator=(const Dog & src)
 {
-	this->type = src.type;
-	this->attribute = src.attribute;
+	if (this != &src)
+	{
+		this->AAnimal::type = src.AAnimal::type;
+		delete (this->attribute);
+		this->attribute = new Brain();
+		for (int i = 0; i < 100; i++)
+			this->attribute->set_ideas(i, src.attribute->get_ideas(i));
+	}
 	return (*this);
 }
 

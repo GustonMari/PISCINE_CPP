@@ -20,7 +20,7 @@ class	Dog: public AAnimal
 {
 	public:
 		Dog();
-		Dog(std::string name);
+		//Dog(std::string name);
 		Dog(const Dog & src);
 		virtual ~Dog();
 		Dog	&operator=(const Dog & src);

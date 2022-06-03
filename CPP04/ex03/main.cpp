@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 17:03:28 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/30 16:20:41 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/03 11:26:36 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,12 @@ int	 main(void)
 		delete bob;
 		delete me;
 		delete src;
+		//! Deep copy
+		Character john("john");
+		Character jim(john);
+		{
+			Character Tim = jim;
+		}
 	}
 /* 	{
 		IMateriaSource* src = new MateriaSource();

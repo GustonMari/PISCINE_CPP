@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 15:52:27 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/20 12:55:48 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/03 10:36:26 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ MateriaSource & MateriaSource::operator=(MateriaSource const & rhs)
 		if (this->materias[i])
 			delete this->materias[i];
 	}
-	for (int i; i < 4; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		this->materias[i] = rhs.materias[i];
 	}

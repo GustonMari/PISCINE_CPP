@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:49:52 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/26 14:10:55 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/03 10:12:23 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,12 @@ Form::~Form()
 Form	& Form::operator=(const Form & src)
 {
 	std::string* string_ptr = const_cast<std::string*>(&this->_name);
+	int *int_ptr = const_cast<int*>(&this->_required_sign);
+	int *int_ptr2 = const_cast<int*>(&this->_required_execute);
+	
 	*string_ptr = src._name;
 	this->_sign = src._sign;
-	int *int_ptr = const_cast<int*>(&this->_required_sign);
 	*int_ptr = src._required_sign;
-	int *int_ptr2 = const_cast<int*>(&this->_required_execute);
 	*int_ptr2 = src._required_execute;
 	return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:46:08 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/18 15:38:35 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/03 10:31:22 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class	AAnimal
 		virtual	~AAnimal();
 		AAnimal	&operator=(const AAnimal & src);
 		virtual void	makeSound() const = 0;
-		//virtual void	makeSound() const = 0;
 		std::string getType() const;
 	protected:
 		std::string	type;

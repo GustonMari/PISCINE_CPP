@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 13:25:20 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/26 15:48:39 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/03 10:22:57 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ Intern::~Intern()
 
 Intern  & Intern::operator=(Intern const & rhs)
 {
-	//TODO : check if it's the same object
 	(void)rhs;
 	return *this;
 }

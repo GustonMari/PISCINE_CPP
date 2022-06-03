@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:44:42 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/02 18:43:15 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/03 11:16:31 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ In practice, when you mark a virtual function as pure (=0), there is very little
 	https://www.linkedin.com/pulse/why-do-we-need-virtual-destructors-joydip-kanjilal
 */
 
-//TODO: setter pour les attributs de brain
+//TODO: exercice broken faire un deep copy pour l'assignation
 
 int main()
 {
@@ -75,9 +75,9 @@ int main()
 	Brain	weird_man;
 	weird_man = normal_man;
 	weird_man.show_ideas();
-	Dog	basic;
+	Cat	basic;
 	{
-		Dog tmp = basic;
+		Cat tmp = basic;
 	}
 	return 0;
 }
