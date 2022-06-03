@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 09:42:27 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/25 17:32:05 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/03 12:12:22 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,11 @@ Point::~Point(void)
 
 Point	& Point::operator=(const Point & src)
 {
-	this->x = src.x;
-	this->y = src.y;
+	Fixed * ptr_y = const_cast<Fixed *>(&(this->y));
+	Fixed * ptr_x = const_cast<Fixed *>(&(this->x));
+
+	*ptr_x = src.x;
+	*ptr_y = src.y;
 	return (*this);
 }
 

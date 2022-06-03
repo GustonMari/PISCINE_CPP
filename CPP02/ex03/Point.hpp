@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 09:42:30 by gmary             #+#    #+#             */
-/*   Updated: 2022/04/25 17:30:02 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/03 12:01:17 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class Point
 		Fixed	get_y();
 		~Point();
 	private:
-		Fixed	x;
-		Fixed	y;
+		const Fixed	x;
+		const Fixed	y;
 };
 
 #endif
