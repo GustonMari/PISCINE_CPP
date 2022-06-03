@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:13:58 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/03 10:15:15 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/03 11:40:03 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ int	main(void)
 		Bureaucrat	senator("Michel", 145);
 		ShrubberyCreationForm law("Pineapple trees");
 		law.Form::beSigned(senator);
+		law.Form::signForm(senator);
 		senator.executeForm(law);
 	}
 	catch(const std::exception & e)
