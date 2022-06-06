@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 15:26:34 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/06 10:08:47 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/06 17:53:30 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,10 @@ class Span
 
 		Span & operator=(const Span & copy);
 
-		void addNumber(int value);
-		int shortestSpan();
-		int longestSpan();
+		void	addNumber(int value);
+		int		shortestSpan();
+		int		longestSpan();
+		void	fillSpan(std::vector<int> begin, std::vector<int> end);
 		class SpanIsFull: public std::exception
 		{
 			public:

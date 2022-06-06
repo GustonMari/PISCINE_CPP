@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 15:28:54 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/06 12:55:31 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/06 17:52:01 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ void	Span::addNumber(int value)
 		throw SpanIsFull();
 }
 
-//TODO: voir lorsquon a que deux nombres INT_MAX INT_MIN que faire
 
 int	Span::shortestSpan(void)
 {
@@ -72,13 +71,9 @@ int	Span::shortestSpan(void)
 		{
 			for (unsigned int j = i + 1 ; j < N ; j++)
 			{
-				if (min_dist > fabs(_numbers[i] - _numbers[j]) && _numbers[i] > 0 && _numbers[j] > 0)
-					min_dist = fabs(_numbers[i] - _numbers[j]);
-				else if (min_dist > fabs(fabs(_numbers[i]) + _numbers[j]) && _numbers[i] < 0 && _numbers[j] > 0)
+				if (min_dist > fabs(fabs(_numbers[i]) + _numbers[j]) && _numbers[i] < 0 && _numbers[j] > 0)
 					min_dist = fabs(fabs(_numbers[i]) + _numbers[j]);
-				else if (min_dist > fabs(_numbers[i] - _numbers[j]) && _numbers[i] < 0 && _numbers[j] < 0)
-					min_dist = fabs(_numbers[i] - _numbers[j]);
-				else if (min_dist > fabs(_numbers[i] - _numbers[j]) && _numbers[i] > 0 && _numbers[j] < 0)
+				else if (min_dist > fabs(_numbers[i] - _numbers[j]))
 					min_dist = fabs(_numbers[i] - _numbers[j]);
 			}
 		}
@@ -86,12 +81,13 @@ int	Span::shortestSpan(void)
 	return (min_dist);
 }
 
+//TODO: voir lorsquon a que deux nombres INT_MAX INT_MIN que faire
 int	Span::longestSpan(void)
 {
 	int max_dist;
 
 	max_dist = 0;
-	if (N == 0 || N == 1)
+	if (N == 0 || N == 1 || (N == 2 && _numbers[0] == _numbers[1]))
 		throw NoDistance();
 	else
 	{
@@ -99,9 +95,9 @@ int	Span::longestSpan(void)
 		{
 			for (unsigned int j = i + 1 ; j < N ; j++)
 			{
-				if (max_dist >= INT_MAX)
-					return (INT_MAX);
-				if (max_dist > fabs(_numbers[i] - _numbers[j]))
+				if (max_dist < fabs(fabs(_numbers[i]) + _numbers[j]) && _numbers[i] < 0 && _numbers[j] > 0)
+					max_dist = fabs(fabs(_numbers[i]) + _numbers[j]);
+				else if (max_dist < fabs(_numbers[i] - _numbers[j]))
 					max_dist = fabs(_numbers[i] - _numbers[j]);
 			}
 		}
@@ -109,14 +105,19 @@ int	Span::longestSpan(void)
 	return (max_dist);
 }
 
+void	fillSpan(std::vector<int> begin, std::vector<int> end)
+{
+	
+}
+
 //!------------------------------EXCEPTIONS-------------------------------------
 
 const char * Span::SpanIsFull::what(void) const throw()
 {
-	return ("Span Is full\n");
+	return ("Span Is full");
 }
 
 const char * Span::NoDistance::what(void) const throw()
 {
-	return ("Span Is full\n");
+	return ("No distance");
 }
