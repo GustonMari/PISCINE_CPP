@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 15:28:54 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/03 17:08:20 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/06 12:55:31 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,19 +57,56 @@ void	Span::addNumber(int value)
 		throw SpanIsFull();
 }
 
+//TODO: voir lorsquon a que deux nombres INT_MAX INT_MIN que faire
+
 int	Span::shortestSpan(void)
 {
-	if (N == 0 || N == 1)
+	int min_dist;
+
+	min_dist = INT_MAX;
+	if (N == 0 || N == 1 || (N == 2 && _numbers[0] == _numbers[1]))
 		throw NoDistance();
 	else
-		
+	{
+		for (unsigned int i = 0 ; i < N ; i++)
+		{
+			for (unsigned int j = i + 1 ; j < N ; j++)
+			{
+				if (min_dist > fabs(_numbers[i] - _numbers[j]) && _numbers[i] > 0 && _numbers[j] > 0)
+					min_dist = fabs(_numbers[i] - _numbers[j]);
+				else if (min_dist > fabs(fabs(_numbers[i]) + _numbers[j]) && _numbers[i] < 0 && _numbers[j] > 0)
+					min_dist = fabs(fabs(_numbers[i]) + _numbers[j]);
+				else if (min_dist > fabs(_numbers[i] - _numbers[j]) && _numbers[i] < 0 && _numbers[j] < 0)
+					min_dist = fabs(_numbers[i] - _numbers[j]);
+				else if (min_dist > fabs(_numbers[i] - _numbers[j]) && _numbers[i] > 0 && _numbers[j] < 0)
+					min_dist = fabs(_numbers[i] - _numbers[j]);
+			}
+		}
+	}
+	return (min_dist);
 }
 
 int	Span::longestSpan(void)
 {
+	int max_dist;
+
+	max_dist = 0;
 	if (N == 0 || N == 1)
 		throw NoDistance();
 	else
+	{
+		for (unsigned int i = 0 ; i < N ; i++)
+		{
+			for (unsigned int j = i + 1 ; j < N ; j++)
+			{
+				if (max_dist >= INT_MAX)
+					return (INT_MAX);
+				if (max_dist > fabs(_numbers[i] - _numbers[j]))
+					max_dist = fabs(_numbers[i] - _numbers[j]);
+			}
+		}
+	}
+	return (max_dist);
 }
 
 //!------------------------------EXCEPTIONS-------------------------------------

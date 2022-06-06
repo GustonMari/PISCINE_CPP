@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 15:26:34 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/03 17:08:07 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/06 10:08:47 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <limits.h>
 # include <vector>
 # include <deque>
+# include <math.h>
+# include <stdio.h>
 
 //TODO: finir exo shortest longest
 

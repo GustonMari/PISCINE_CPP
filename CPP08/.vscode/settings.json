@@ -1,6 +1,7 @@
 {
 	"files.associations": {
 		"*.tpp": "cpp",
-		"ostream": "cpp"
+		"ostream": "cpp",
+		"cmath": "cpp"
 	}
 }
