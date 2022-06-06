@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 13:15:49 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/03 15:25:17 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/06 18:02:47 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,10 @@ Algorithms:
 	it - container.begin() => done index iterator
 	rand() % 100     // between 0 and 99
 	rand() % 100 + 1 // between 1 and 100
+
+	In such a situation, the compiler assumes that it is a field, so in your case it yields a syntax error. To solve the issue, just tell the compiler that it is a type by putting a typename ahead of the declaration:
+
+typename list<tNode<T>*>::iterator it
 */
 
 #include "easyfind.hpp"

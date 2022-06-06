@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 15:28:54 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/06 17:52:01 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/06 18:09:13 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,9 +105,15 @@ int	Span::longestSpan(void)
 	return (max_dist);
 }
 
-void	fillSpan(std::vector<int> begin, std::vector<int> end)
+void	fillSpan(std::vector<int> &_begin, std::vector<int> _end)
 {
-	
+	std::vector<int>::iterator it;
+	it = _begin.begin();
+	//srand(time(NULL));
+	while (it != _end.end())
+	{
+		_begin.addNumber((rand() % CASE_SIZE));
+	}
 }
 
 //!------------------------------EXCEPTIONS-------------------------------------

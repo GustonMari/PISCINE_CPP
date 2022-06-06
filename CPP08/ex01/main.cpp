@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:04:01 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/06 17:04:47 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/06 18:03:33 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,19 @@ Algorithms:
 
 	it = find(container.begin(), container.end(), value);
 	if (it == container.end())
+
+!	In such a situation, the compiler assumes that it is a field, so in your case it yields a syntax error. To solve the issue, just tell the compiler that it is a type by putting a typename ahead of the declaration:
+
+!	typename list<tNode<T>*>::iterator it
+
+!	std::cout << "Find! =" << *it << ", index = "<< it - container.begin() << std::endl;
 */
 
 # include <iostream>
 # include <string>
 # include <vector>
 # include "Span.hpp"
-# define CASE_SIZE 10000
+
 
 int main()
 {
