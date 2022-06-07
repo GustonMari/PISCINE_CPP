@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:34:24 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/01 16:02:57 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/07 18:55:30 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,10 @@ https://www.geeksforgeeks.org/template-specialization-c/
 # include <iostream>
 # include <string>
 
-template <typename T, typename S> void	iter(T *tab, S size, void (*f)(T &))
+template <typename T, typename F>
+void	iter(T *tab, size_t size, F (*f)(T &))
 {
-	for (S i = 0; i < size; i++)
+	for (size_t i = 0; i < size; i++)
 		f(tab[i]);
 }
 
@@ -50,19 +51,19 @@ int main()
 {
 		int		tab[5] = {1, 2, 3, 4, 5};
 		
-		::iter<int, int>(tab, 5, &print);
+		::iter<int,void>(tab, 5, &print);
 	
 	std::cout << "TEST 2------------------------------" << std::endl;
 	
 		double	tab2[5] = {1, 2, 3, 4, 5};
 		
-		::iter<double, int>(tab2, 5, &square);
-		::iter<double, int>(tab2, 5, &print);
+		::iter<double,void>(tab2, 5, &square);
+		::iter<double,void>(tab2, 5, &print);
 	
 	std::cout << "TEST 3------------------------------" << std::endl;
 	
 		std::string str[2] = {"hello toi", "la forme chacal"};
 		
-		::iter<std::string, int>(str, 2, &print);
+		::iter<std::string, void>(str, 2, &print);
 	return 0;
 }
