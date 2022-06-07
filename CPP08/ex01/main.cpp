@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:04:01 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/06 18:03:33 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/07 15:13:52 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ Algorithms:
 ?	int minElementIndex = std::min_element(v.begin(),v.end()) - v.begin();
 ?	int minElement = *std::min_element(v.begin(), v.end());
 
-	it = find(container.begin(), container.end(), value);
-	if (it == container.end())
+?	it = find(container.begin(), container.end(), value);
+?	if (it == container.end())
 
 !	In such a situation, the compiler assumes that it is a field, so in your case it yields a syntax error. To solve the issue, just tell the compiler that it is a type by putting a typename ahead of the declaration:
 
@@ -81,7 +81,6 @@ Algorithms:
 # include <string>
 # include <vector>
 # include "Span.hpp"
-
 
 int main()
 {
@@ -133,6 +132,17 @@ int main()
 		}
 		std::cout << "Shortest span is = " << big.shortestSpan() << std::endl;
 		std::cout << "Longest span is = " << big.longestSpan() << std::endl;
+		//! fillSpan TEST
+		Span	new_fill(15);
+		new_fill.addNumber(-9);
+		new_fill.addNumber(125);
+		new_fill.addNumber(375);
+		new_fill.addNumber(4865);
+		new_fill.fillSpan(new_fill.getVector().begin(), new_fill.getVector().end());
+		new_fill.printSpan(new_fill.getVector().begin(), new_fill.getVector().end());
+		std::cout << "test2 fill -------" << std::endl;
+		new_fill.fillSpan(new_fill.getVector().begin(), new_fill.getVector().end());
+		new_fill.printSpan(new_fill.getVector().begin(), new_fill.getVector().end());
 		return (0);
 	}
 	catch(const std::exception& e)

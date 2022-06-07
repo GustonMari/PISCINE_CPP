@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 15:28:54 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/06 18:09:13 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/07 16:46:09 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,14 +105,27 @@ int	Span::longestSpan(void)
 	return (max_dist);
 }
 
-void	fillSpan(std::vector<int> &_begin, std::vector<int> _end)
+std::vector<int> & Span::getVector(void)
 {
-	std::vector<int>::iterator it;
-	it = _begin.begin();
-	//srand(time(NULL));
-	while (it != _end.end())
+	std::vector<int> & ref = _numbers;
+	
+	return (ref);
+}
+
+//TODO ne marche pas a modifier
+void	Span::fillSpan(std::vector<int>::iterator _begin, std::vector<int>::iterator _end)
+{
+	if (_numbers.size() >= this->N || (_numbers.size() + (_end - _begin)) >= N)
+		throw SpanIsFull();
+	_numbers.insert(_numbers.begin(), _begin, _end);
+}
+
+void	Span::printSpan(std::vector<int>::iterator _begin, std::vector<int>::iterator _end)
+{
+	while (_begin != _end)
 	{
-		_begin.addNumber((rand() % CASE_SIZE));
+		std::cout << *_begin << std::endl;
+		_begin++;
 	}
 }
 

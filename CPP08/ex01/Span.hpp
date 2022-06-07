@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 15:26:34 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/06 17:55:43 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/07 11:13:07 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ class Span
 		void	addNumber(int value);
 		int		shortestSpan();
 		int		longestSpan();
-		void	fillSpan(std::vector<int> begin, std::vector<int> end);
+		std::vector<int> & getVector(void);
+		void	fillSpan(std::vector<int>::iterator _begin, std::vector<int>::iterator _end);
+		void	printSpan(std::vector<int>::iterator _begin, std::vector<int>::iterator _end);
 		class SpanIsFull: public std::exception
 		{
 			public:
