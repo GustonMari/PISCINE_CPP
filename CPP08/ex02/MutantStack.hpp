@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 16:58:04 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/07 17:30:44 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/08 10:30:29 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,11 @@
 # include <limits.h>
 # include <iterator>
 # include <vector>
-# include <deque>
-# include <list>
-# include <map>
-# include <set>
-# include <array>
 # include <algorithm>
+#include <stack>
 
-class MutantStack
+/* template <typename T>
+class MutantStack: public std::stack<T>
 {
 	public:
 		MutantStack();
@@ -34,6 +31,6 @@ class MutantStack
 
 		MutantStack & operator=(const MutantStack & copy);
 	private:
-};
+}; */
 
 #endif

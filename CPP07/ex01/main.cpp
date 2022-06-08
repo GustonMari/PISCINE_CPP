@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:34:24 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/07 18:55:30 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/08 16:22:32 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,45 +25,37 @@ A<char> a; // This will call A<char, char>
 https://docs.microsoft.com/fr-fr/cpp/cpp/template-specialization-cpp?view=msvc-170
 https://www.geeksforgeeks.org/templates-cpp/
 https://www.geeksforgeeks.org/template-specialization-c/
+
+	::iter<int,void>(tab, 5, &print); les doubles point permettent d'avoir
 */
 
 # include <iostream>
 # include <string>
-
-template <typename T, typename F>
-void	iter(T *tab, size_t size, F (*f)(T &))
-{
-	for (size_t i = 0; i < size; i++)
-		f(tab[i]);
-}
-
-template <typename T> void print(T &s)
-{
-	std::cout << s << std::endl;
-}
-
-template <typename T> void square(T &i)
-{
-	i *= i;
-}
+# include "Iter.tpp"
 
 int main()
 {
 		int		tab[5] = {1, 2, 3, 4, 5};
+
 		
-		::iter<int,void>(tab, 5, &print);
+		iter(tab, 5, print_tab<int>);
 	
 	std::cout << "TEST 2------------------------------" << std::endl;
 	
 		double	tab2[5] = {1, 2, 3, 4, 5};
 		
-		::iter<double,void>(tab2, 5, &square);
-		::iter<double,void>(tab2, 5, &print);
+		iter(tab2, 5, square<double>);
+		iter(tab2, 5, print_tab<double>);
 	
 	std::cout << "TEST 3------------------------------" << std::endl;
 	
 		std::string str[2] = {"hello toi", "la forme chacal"};
 		
-		::iter<std::string, void>(str, 2, &print);
+		iter(str, 2, print_tab<std::string>);
+	std::cout << "TEST 4------------------------------" << std::endl;
+		
+		int	const	tab_const[5] = {1, 2, 3, 4, 5};
+		iter(tab_const, 5, print_const<int>);
+		
 	return 0;
 }

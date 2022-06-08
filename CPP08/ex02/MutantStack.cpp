@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:27:14 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/07 18:32:26 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/08 10:21:13 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 
 //!------------------------------CONSTRUCTOR----------------------------------
 
-MutantStack::MutantStack()
-{
+// MutantStack::MutantStack()
+// {
 
-}
+// }
 
-MutantStack::MutantStack(const MutantStack& copy)
-{
-	*this = copy;
-}
+// MutantStack::MutantStack(const MutantStack& copy)
+// {
+// 	*this = copy;
+// }
 
 //!------------------------------DESTRUCTOR-----------------------------------
 
-MutantStack::~MutantStack()
-{
+// MutantStack::~MutantStack()
+// {
 
-}
+// }
 
 //!------------------------------OPERATOR-------------------------------------
 
-MutantStack	&	MutantStack::operator=(const MutantStack& copy)
-{
-(void)copy;
-	return(*this);
-}
+// MutantStack	&	MutantStack::operator=(const MutantStack& copy)
+// {
+// (void)copy;
+// 	return(*this);
+// }
 
 //!------------------------------FUNCTION-------------------------------------
