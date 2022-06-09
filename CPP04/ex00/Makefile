@@ -8,7 +8,7 @@ SRC = main.cpp \
 		WrongCat.cpp
 OBJ = $(SRC:.cpp=.o)
 DEPS = $(SRC:.cpp=.d)
-NAME= ex03
+NAME= ex00
 
 all: server
 	@echo "\\n\033[32;1mMAKE ALL OK \033[0m \\n"

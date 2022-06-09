@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:44:42 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/03 11:16:31 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/09 09:43:18 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,15 @@ In practice, when you mark a virtual function as pure (=0), there is very little
 
 	TO DO : passer par une fonction virtuel pour recuperer le brain de animals contenue dans cat et dog
 	https://www.linkedin.com/pulse/why-do-we-need-virtual-destructors-joydip-kanjilal
+	
+	Pour prouver que c'est bien une deep copy , modifie la copie et montre que l'original n'a pas changé.
+	Ou comme Kevin l'a dit cela va bien call 2 destructor, si la copy n'est pas deep le meme pointeur sera delete deux fois. 
+	ou faire ca avec une allocation
+	Cat	chat_vnr;
+	{
+		Cat tmp = chat_vnr;
+	}
 */
-
-//TODO: exercice broken faire un deep copy pour l'assignation
 
 int main()
 {
@@ -75,9 +81,14 @@ int main()
 	Brain	weird_man;
 	weird_man = normal_man;
 	weird_man.show_ideas();
-	Cat	basic;
+	//deep copy test
+	Cat	chat_vnr;
 	{
-		Cat tmp = basic;
+		Cat tmp = chat_vnr;
+	}
+	Dog	chien_vnr;
+	{
+		Dog tmp = chien_vnr;
 	}
 	return 0;
 }

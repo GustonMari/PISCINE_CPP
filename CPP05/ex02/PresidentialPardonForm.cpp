@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 10:37:09 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/26 11:29:05 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/09 14:31:23 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,10 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPardonForm & src)
 {
-	this->Form::operator=(src);
+	if (this != &src)
+	{
+		this->Form::operator=(src); 
+	}
 	return (*this);
 }
 

@@ -30,7 +30,10 @@ Dog::Dog()
 
 Dog::Dog(const Dog & src): Animal(src)
 {
-	*this = src;
+	if (this != &src)
+	{
+		*this = src;
+	}
 	std::cout << "Dog was copy constructed" << std::endl;
 }
 
@@ -46,8 +49,10 @@ Dog::~Dog()
 
 Dog	& Dog::operator=(const Dog &src)
 {
-	this->Animal::type = src.Animal::type;
-	this->type = src.type;
+	if (this != &src)
+	{
+		this->Animal::type = src.Animal::type;
+	}
 	return (*this);
 }
 

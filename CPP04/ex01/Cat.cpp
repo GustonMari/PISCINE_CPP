@@ -30,8 +30,11 @@ Cat::Cat(): attribute(new Brain())
 
 Cat::Cat(const Cat & src): Animal(src)
 {
-	attribute = new Brain();
-	*this = src;
+	if (this != &src)
+	{
+		attribute = new Brain();
+		*this = src;
+	}
 	std::cout << "Cat was copy constructed" << std::endl;
 }
 

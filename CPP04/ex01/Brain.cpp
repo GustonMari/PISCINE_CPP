@@ -11,7 +11,10 @@ Brain::Brain()
 
 Brain::Brain(const Brain & src)
 {
-	*this = src;
+	if (this != &src)
+	{
+		*this = src;
+	}
 	std::cout << "Brain was copy constructed" << std::endl;
 }
 
@@ -29,10 +32,13 @@ Brain	& Brain::operator=(const Brain &src)
 	int	i;
 
 	i = 0;
-	while (i < 100)
+	if (this != &src)
 	{
-		ideas[i] = src.ideas[i];
-		i++;
+		while (i < 100)
+		{
+			ideas[i] = src.ideas[i];
+			i++;
+		}
 	}
 	std::cout << "Brain = operator called" << std::endl;
 	return (*this);

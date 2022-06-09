@@ -30,7 +30,10 @@ Cat::Cat()
 
 Cat::Cat(const Cat & src): Animal(src)
 {
-	*this = src;
+	if (this != &src)
+	{
+		*this = src;
+	}
 	std::cout << "Cat was copy constructed" << std::endl;
 }
 
@@ -45,7 +48,10 @@ Cat::~Cat()
 
 Cat	& Cat::operator=(const Cat &src)
 {
-	this->Animal::type = src.Animal::type;
+	if (this != &src)
+	{
+		this->Animal::type = src.Animal::type;
+	}
 	//this->type = src.type;
 	return (*this);
 }

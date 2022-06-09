@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 16:57:08 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/08 17:24:49 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/08 17:57:39 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@
 	typename here is letting the compiler know that value_type is a type and not a static member of _MyBase.
 
 	this->c correspond au container sousjascent
+	Since stacks are last-in first-out containers, the top element is the last element inserted into the stack.
+
+This member function effectively calls member back of the underlying container object.
 */
 
 # include <iostream>
@@ -38,7 +41,7 @@
 # include "MutantStack.hpp"
 # include "MutantStack.tpp"
 
-int main()
+/* int main()
 {
 	MutantStack<int> mstack;
 	mstack.push(5);
@@ -62,4 +65,41 @@ int main()
 	}
 	std::stack<int> s(mstack);
 	return 0;
+} */
+
+int	main()
+{
+	MutantStack<int> tab;
+	tab.push(5);
+	tab.push(17);
+	tab.push(45);
+	tab.push(35);
+	std::cout << "last element = " << tab.top() << std::endl;
+	std::cout << "size tab = " << tab.size() << std::endl;
+
+	std::cout << "TESTING COPY EQUAL" << std::endl;
+	
+	MutantStack<int> tab2(tab);
+	MutantStack<int> tab3 = tab;
+	MutantStack<int>::iterator it = tab2.begin();
+	MutantStack<int>::iterator ite = tab2.end();
+	MutantStack<int>::iterator it1 = tab3.begin();
+	MutantStack<int>::iterator ite1 = tab3.end();
+	std::cout << "TAB2----------" << std::endl;
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+	std::cout << "TAB3----------" << std::endl;
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+/* 	while (it1 != ite1)
+	{
+		std::cout << *ite1 << std::endl;
+		--ite1;
+	} */
 }

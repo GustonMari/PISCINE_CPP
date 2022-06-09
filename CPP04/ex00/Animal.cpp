@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:51:39 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/18 13:13:08 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/08 18:34:41 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ Animal::Animal(std::string name)
 
 Animal::Animal(const Animal & src): type(src.type)
 {
-	*this = src;
+	if (this != &src)
+	{
+		*this = src;
+	}
 	std::cout << "Animal was copy constructed" << std::endl;
 }
 
@@ -36,7 +39,10 @@ Animal::~Animal()
 
 Animal	& Animal::operator=(const Animal &src)
 {
-	this->type = src.type;
+	if (this != &src)
+	{
+		this->type = src.type;
+	}
 	return (*this);
 }
 

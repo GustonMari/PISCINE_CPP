@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:47:30 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/26 14:02:40 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/09 14:10:21 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,12 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat	& Bureaucrat::operator=(Bureaucrat const & rhs)
 {
-	std::string* string_ptr = const_cast<std::string*>(&this->_name);
-	*string_ptr = rhs._name;
-	this->_grade = rhs._grade;
+	if (this != &rhs)
+	{
+		std::string* string_ptr = const_cast<std::string*>(&this->_name);
+		*string_ptr = rhs._name;
+		this->_grade = rhs._grade;
+	}
 	return (*this);
 }
 

@@ -30,7 +30,10 @@ WrongCat::WrongCat(std::string name)
 
 WrongCat::WrongCat(const WrongCat & src): WrongAnimal(src)
 {
-	*this = src;
+	if (this != &src)
+	{
+		*this = src;
+	}
 	std::cout << "WrongCat was copy constructed" << std::endl;
 }
 
@@ -45,8 +48,10 @@ WrongCat::~WrongCat()
 
 WrongCat	& WrongCat::operator=(const WrongCat &src)
 {
-	this->WrongAnimal::type = src.WrongAnimal::type;
-	this->type = src.type;
+	if (this != &src)
+	{
+		this->type = src.type;
+	}
 	return (*this);
 }
 

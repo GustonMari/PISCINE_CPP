@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 10:36:16 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/03 10:15:05 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/09 14:36:45 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,10 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 ShrubberyCreationForm	& ShrubberyCreationForm::operator=(const ShrubberyCreationForm & src)
 {
-	this->Form::operator=(src);
+	if (this != &src)
+	{
+		this->Form::operator=(src);
+	}
 	return (*this);
 }
 

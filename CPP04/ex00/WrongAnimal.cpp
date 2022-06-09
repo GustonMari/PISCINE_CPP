@@ -25,7 +25,10 @@ WrongAnimal::WrongAnimal(std::string name)
 
 WrongAnimal::WrongAnimal(const WrongAnimal & src)
 {
-	*this = src;
+	if (this != &src)
+	{
+		*this = src;
+	}
 	std::cout << "WrongAnimal was copy constructed" << std::endl;
 }
 
@@ -36,7 +39,10 @@ WrongAnimal::~WrongAnimal()
 
 WrongAnimal	& WrongAnimal::operator=(const WrongAnimal &src)
 {
-	this->type = src.type;
+	if (this != &src)
+	{
+		this->type = src.type;
+	}
 	return (*this);
 }
 

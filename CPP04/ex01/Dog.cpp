@@ -32,8 +32,11 @@ Dog::Dog()
 
 Dog::Dog(const Dog & src): Animal(src)
 {
-	attribute = new Brain();
-	*this = src;
+	if (this != &src)
+	{
+		attribute = new Brain();
+		*this = src;
+	}
 	std::cout << "Dog was copy constructed" << std::endl;
 }
 
@@ -48,7 +51,6 @@ Dog::~Dog()
 --------------------OPERATOR----------------------------------------
 */
 
-//TODO: voir pour ca
 Dog & Dog::operator=(const Dog & src)
 {
 	if (this != &src)

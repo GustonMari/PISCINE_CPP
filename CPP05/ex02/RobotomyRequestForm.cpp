@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:03:36 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/03 10:14:51 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/09 14:36:19 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,10 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 RobotomyRequestForm	& RobotomyRequestForm::operator=(const RobotomyRequestForm & src)
 {
-	this->Form::operator=(src);
+	if (this != &src)
+	{
+		this->Form::operator=(src);
+	}
 	return (*this);
 }
 
