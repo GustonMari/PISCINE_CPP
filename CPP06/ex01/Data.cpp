@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 17:13:39 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/31 17:46:32 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/10 09:07:07 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,11 @@ Data::~Data()
 
 Data	&	Data::operator=(const Data& copy)
 {
-	this->private_data = copy.private_data;
-	this->confidential_name = copy.confidential_name;
+	if (this != &copy)
+	{
+		this->private_data = copy.private_data;
+		this->confidential_name = copy.confidential_name;
+	}
 	return(*this);
 }
 

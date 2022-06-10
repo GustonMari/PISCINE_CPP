@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 14:22:39 by gmary             #+#    #+#             */
-/*   Updated: 2022/05/31 17:11:00 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/10 09:15:48 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,7 +171,6 @@ bool	particuliar_case(std::string str)
 
 // FLT_MAX DBL_MAX
 
-//TODO: comment convert le char en int et surtout doit ton proteger la conversion en char
 //lorsque l'on rentre par exemple  40000
 //TODO: vraiment tout recheck
 int main(int ac, char **av)
