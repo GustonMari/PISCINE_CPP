@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 16:05:19 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/07 18:54:44 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/13 16:26:21 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ template <typename T> class Array
 		
 		Array & operator=(const Array & src);
 		T & operator[](unsigned int i);
+		T const & operator[](unsigned int i) const;
 
 		unsigned int size() const;
 		class OutOfRange : public std::exception
@@ -39,8 +40,6 @@ template <typename T> class Array
 };
 
 //!------------------------------CONSTRUCTOR----------------------------------
-
-//TODO: EST-CE BIEN COMME CA QUE LON CREE UNE ARRAY VIDE ??
 
 template <typename T>
 Array<T>::Array(): _size(0)
@@ -69,9 +68,8 @@ Array<T>::Array(const Array & src): _size(src._size)
 }
 
 
-//TODO: enlever cette fonction en desous
 template <typename T>
-Array<T>::Array(T arr[], unsigned int length): _size(length)
+Array<T>::Array(T * arr, unsigned int length): _size(length)
 {
 	tab = new T[length];
 	for (unsigned int i = 0; i < length; i++)
@@ -107,6 +105,14 @@ Array<T>	&	Array<T>::operator=(const Array<T> & src)
 
 template <typename T>
 T & Array<T>::operator[](unsigned int i)
+{
+	if (i >= this->_size)
+		throw Array::OutOfRange();
+	return (this->tab[i]);
+}
+
+template <typename T>
+T const & Array<T>::operator[](unsigned int i) const
 {
 	if (i >= this->_size)
 		throw Array::OutOfRange();

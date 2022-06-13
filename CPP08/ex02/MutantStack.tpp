@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:32:35 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/08 17:39:09 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/13 16:53:56 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,11 @@ class MutantStack: public std::stack<T>
 		}
 		MutantStack(const MutantStack& copy)
 		{
-			*this = copy;
+			if (this != &copy)
+			{
+				*this = copy;
+				
+			}
 		} 
 
 		~MutantStack()

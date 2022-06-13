@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:23:40 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/01 14:32:23 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/13 14:58:19 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ https://www.geeksforgeeks.org/template-specialization-c/
 */
 # include <iostream>
 # include <string>
+# include "whatever.hpp"
 
 template <typename T> void swap(T & s1, T & s2)
 {
@@ -40,12 +41,12 @@ template <typename T> void swap(T & s1, T & s2)
 
 template <typename T> T min(T nb1, T nb2)
 {
-	return ((nb1 <= nb2) ? nb1 : nb2);
+	return ((nb1 < nb2) ? nb1 : nb2);
 }
 
 template <typename T> T max(T nb1, T nb2)
 {
-	return ((nb1 >= nb2) ? nb1 : nb2);
+	return ((nb1 > nb2) ? nb1 : nb2);
 }
 
 int main( void )

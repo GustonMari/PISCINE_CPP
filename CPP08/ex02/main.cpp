@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 16:57:08 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/08 17:57:39 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/13 16:56:58 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,14 +92,9 @@ int	main()
 		++it;
 	}
 	std::cout << "TAB3----------" << std::endl;
-	while (it != ite)
+	while (it1 != ite1)
 	{
-		std::cout << *it << std::endl;
-		++it;
+		std::cout << *it1 << std::endl;
+		++it1;
 	}
-/* 	while (it1 != ite1)
-	{
-		std::cout << *ite1 << std::endl;
-		--ite1;
-	} */
 }

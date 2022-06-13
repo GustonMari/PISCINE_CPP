@@ -6,14 +6,14 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 16:23:24 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/02 11:15:40 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/13 16:28:36 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <iostream>
 # include <string>
 # include "Array.tpp"
-
+# include "Array.hpp"
 /*
 	Base *tab;
 
@@ -63,6 +63,7 @@ int main()
 			std::cout << test2[1] << std::endl;
 			std::cout << test4[1] << std::endl;
 		
+
 		//! error std::exception
 		
 			testoo[-10];

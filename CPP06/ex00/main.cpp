@@ -6,7 +6,7 @@
 /*   By: gmary <gmary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 14:22:39 by gmary             #+#    #+#             */
-/*   Updated: 2022/06/10 09:15:48 by gmary            ###   ########.fr       */
+/*   Updated: 2022/06/10 18:08:16 by gmary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void	convert_float(std::string str)
 
 void	convert_char(char c)
 {
-	//std::cout << "char: " << c << std::endl;
 	std::cout << "char: " << static_cast<char>(static_cast<int>(c)) << std::endl;
 	std::cout << "int: " << static_cast<int>(c) << std::endl;
 	std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
@@ -133,10 +132,7 @@ void	define_conversion_type(std::string str)
 		convert_integer(str);
 	else
 		convert_double(str);
-	//if (d >= DBL_MIN && d <= DBL_MAX && str.find(".") != std::string::npos)
 }
-
-//TODO: que ce passe til pour +inf et +infff ???
 
 void	convert_particuliar(std::string str)
 {
@@ -172,7 +168,7 @@ bool	particuliar_case(std::string str)
 // FLT_MAX DBL_MAX
 
 //lorsque l'on rentre par exemple  40000
-//TODO: vraiment tout recheck
+
 int main(int ac, char **av)
 {
 	std::string	str;
